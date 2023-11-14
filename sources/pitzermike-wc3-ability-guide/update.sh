@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -euxo pipefail
+
+now=$(date --iso-8601)
+
+wget --output-document $now.html https://web.archive.org/web/20201108101827/http://www.wc3c.net/showthread.php?t=81742
+
+tr -cd '\11\12\40-\176' < $now.html > $now.html.cleaned
+
+pandoc -r html -w markdown $now.html.cleaned -o $now.md
