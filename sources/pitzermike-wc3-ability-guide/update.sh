@@ -8,4 +8,4 @@ wget --output-document $now.html https://web.archive.org/web/20201108101827/http
 
 tr -cd '\11\12\40-\176' < $now.html > $now.html.cleaned
 
-pandoc -r html -w markdown $now.html.cleaned -o $now.md
+pandoc -r html -w gfm $now.html.cleaned -o $now.md

@@ -2,4 +2,4 @@
 
 set -euxo pipefail
 
-pandoc -r odt -w markdown $1 -o 2023-11-14.md
+pandoc -r odt -w gfm $1 -o 2023-11-14.md
