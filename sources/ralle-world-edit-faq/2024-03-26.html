@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html id="XF" lang="en-US" dir="LTR" data-app="public" data-template="thread_view" data-container-key="node-278" data-content-key="thread-7239" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="1711482226,b7edb609c216258bae37807f267a0fe8" class="has-no-js template-thread_view">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World Editor FAQ - Work in Progress | HIVE</title>
+<link rel="manifest" href="/webmanifest.php">
+<meta name="apple-mobile-web-app-title" content="HIVE">
+<link rel="apple-touch-icon" href="/data/styles/7/styles/vindit-reforged/logo.og.png">
+<meta name="description" content="CONWorld Editor Basics
+The Object Editor
+The Object Manager
+The Import Manager
+The Terrain Editor
+The Trigger Editor
+The Sound Editor
+
+Introduction
+This FAQ..." />
+<meta property="og:description" content="CONWorld Editor Basics
+The Object Editor
+The Object Manager
+The Import Manager
+The Terrain Editor
+The Trigger Editor
+The Sound Editor
+
+Introduction
+This FAQ is a collection of several frequently asked questions and short tutorials about performing different tasks in Blizzard&#039;s Warcraft III World..." />
+<meta property="twitter:description" content="CONWorld Editor Basics
+The Object Editor
+The Object Manager
+The Import Manager
+The Terrain Editor
+The Trigger Editor
+The Sound Editor
+
+Introduction
+This FAQ is a collection of several frequently..." />
+<meta property="og:url" content="https://www.hiveworkshop.com/threads/world-editor-faq-work-in-progress.7239/" />
+<link rel="canonical" href="https://www.hiveworkshop.com/threads/world-editor-faq-work-in-progress.7239/" />
+<meta property="og:site_name" content="HIVE" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="World Editor FAQ - Work in Progress" />
+<meta property="twitter:title" content="World Editor FAQ - Work in Progress" />
+<meta property="og:image" content="/data/styles/7/styles/vindit-reforged/512.logo.og.png" />
+<meta property="twitter:image" content="/data/styles/7/styles/vindit-reforged/512.logo.og.png" />
+<meta property="twitter:card" content="summary" />
+<link rel="preload" href="/styles/fonts/fa/fa-regular-400.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/styles/fonts/fa/fa-solid-900.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/styles/fonts/fa/fa-brands-400.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="stylesheet" href="/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=7&amp;l=1&amp;d=1708462169&amp;k=5a0dd16dc0243c44c317da80b859f3a9a28f7189" />
+<link rel="stylesheet" href="/css.php?css=public%3Abb_code.less%2Cpublic%3Abb_code_jass.less%2Cpublic%3Abb_code_tag_box.less%2Cpublic%3Abb_code_tag_trigger.less%2Cpublic%3Aexperience_bar.less%2Cpublic%3Alightbox.less%2Cpublic%3Alightslider.less%2Cpublic%3Amedals.less%2Cpublic%3Amessage.less%2Cpublic%3Anotices.less%2Cpublic%3Aratory_message_resource_counts.less%2Cpublic%3Ashare_controls.less%2Cpublic%3Astructured_list.less%2Cpublic%3Avindit_features.less%2Cpublic%3Avindit_rotator_ads.less%2Cpublic%3Avindit_sign_up_upgrade.less%2Cpublic%3Aextra.less&amp;s=7&amp;l=1&amp;d=1708462169&amp;k=375ba5a0ddefb118f9e6d6c1bc1382839539644b" />
+<script src="/js/xf/preamble.min.js?_v=b6041806"></script>
+<link rel="icon" type="image/png" href="/data/styles/7/styles/vindit-reforged/favicon.png" sizes="32x32" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2235457-1"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-2235457-1', {
+			// 
+			
+			
+				'anonymize_ip': true,
+			
+		});
+	</script>
+</head>
+<body data-template="thread_view">
+<div class="p-pageWrapper" id="top">
+<div class="p-navSticky p-navSticky--primary" data-xf-init="sticky-header">
+<nav class="p-nav">
+<div class="p-nav-inner">
+<a class="p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" role="button" tabindex="0">
+<i aria-hidden="true"></i>
+<span class="p-nav-menuText">Menu</span>
+</a>
+<div class="p-nav-smallLogo">
+<a href="https://www.hiveworkshop.com">
+<img src="/data/styles/7/styles/vindit-reforged/hive-logo.png" srcset alt="HIVE" width="250" height="156" />
+</a>
+</div>
+<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+<div class="hScroller-scroll">
+<ul class="p-nav-list js-offCanvasNavSource">
+<li>
+<div class="p-navEl ">
+<a href="https://www.hiveworkshop.com" class="p-navEl-link " data-xf-key="1" data-nav-id="home">Home</a>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-linkHolder" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+<span class="p-navEl-link p-navEl-link--menuTrigger " data-nav-id="mapsAndResources">Maps & Resources</span>
+</a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/repositories/warcraft-3-custom-maps.564/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="maps">Maps</a>
+<a href="/repositories/warcraft-3-custom-models.530/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="models">Models</a>
+<a href="/repositories/warcraft-3-custom-skins.552/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="skins">Skins</a>
+<a href="/repositories/warcraft-3-custom-icons.541/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="icons">Icons</a>
+<a href="/repositories/spells.569/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="spells">Spells</a>
+<a href="/repositories/tools.560/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="tools">Tools</a>
+<a href="/forums/code.718/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="code">Code</a>
+<a href="/repositories/sounds.783/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="sounds">Sounds</a>
+<a href="/repositories/packs.542/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="packs">Packs</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/forums/warcraft-3-tutorials.206/" class="p-navEl-link " data-xf-key="3" data-nav-id="tutorials">Tutorials</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/forums/rules-information.710/" class="p-navEl-link " data-xf-key="4" data-nav-id="rulesAndInfo">Rules &amp; Information</a>
+</div>
+</li>
+<li>
+<div class="p-navEl is-selected" data-has-children="true">
+<a href="/forums/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+<a data-xf-key="5" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+<a href="/search/?type=post" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="searchForums">Search forums</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/pastebin/" class="p-navEl-link " data-xf-key="6" data-nav-id="pastebin">Pastebin</a>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/streams/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="EWRrio">Streams</a>
+<a data-xf-key="7" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/streams/multi/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-xf-init="rio-multi-popout" data-nav-id="EWRrioMulti">Multi-Viewer</a>
+<a href="/streams/games/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="EWRrioGames">Games</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/whats-new/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="whatsNew">What's new</a>
+<a data-xf-key="8" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="whatsNewPosts">New posts</a>
+<a href="/whats-new/media/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgWhatsNewNewMedia">New media</a>
+<a href="/whats-new/media-comments/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgWhatsNewMediaComments">New media comments</a>
+<a href="/whats-new/profile-posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="whatsNewProfilePosts">New profile posts</a>
+<a href="/whats-new/latest-activity" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="latestActivity">Latest activity</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/media/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfmg">Media</a>
+<a data-xf-key="9" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/media/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgNewMedia">New media</a>
+<a href="/whats-new/media-comments/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgNewComments">New comments</a>
+<a href="/search/?type=xfmg_media" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfmgSearchMedia">Search media</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/members/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="members">Members</a>
+<a data-xf-key="10" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/online/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="currentVisitors">Current visitors</a>
+<a href="/whats-new/profile-posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="newProfilePosts">New profile posts</a>
+<a href="/search/?type=profile_post" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="searchProfilePosts">Search profile posts</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/asset-scanner/" class="p-navEl-link " data-xf-key="11" data-nav-id="vinditDownloadsAssetScanner">Asset scanner</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/icon-borderiser/" class="p-navEl-link " data-xf-key="12" data-nav-id="vinditDownloadsIconBorderiser">Icon borderiser</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/bbcode-migrater/" class="p-navEl-link " data-xf-key="13" data-nav-id="bbCodeMigrater">Hive 2 BB code migrator</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="vindit-feature-buttons-wrap">
+<div class="vindit-feature-buttons" data-xf-init="vindit-feature-buttons">
+<div class="just-to-get-right-width"></div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Community badgeContainer " data-badge></a>
+<a href class="vf-label">Community</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/forums" class="vf-icon dd vf-icon-CForums badgeContainer " title="Forums" data-badge></a>
+<a href="/forums" class="child-label">Forums</a>
+</div>
+<div class="child">
+<a href="/whats-new" class="vf-icon dd vf-icon-CWhatsNew badgeContainer " title="What&#039;s New" data-badge></a>
+<a href="/whats-new" class="child-label">What&#039;s New</a>
+</div>
+<div class="child">
+<a href="/watched/threads" class="vf-icon dd vf-icon-CWatched badgeContainer " title="Watched" data-badge></a>
+<a href="/watched/threads" class="child-label">Watched</a>
+</div>
+<div class="child">
+<a href="https://discord.hiveworkshop.com/" class="vf-icon dd vf-icon-CDiscord badgeContainer " title="Discord" data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="child-label">Discord</a>
+</div>
+<div class="child">
+<a href="/streams" class="vf-icon dd vf-icon-CStreams badgeContainer " title="Streams" data-badge></a>
+<a href="/streams" class="child-label">Streams</a>
+</div>
+<div class="child">
+<a href="/members" class="vf-icon dd vf-icon-CMembers badgeContainer " title="Members" data-badge></a>
+<a href="/members" class="child-label">Members</a>
+</div>
+<div class="child">
+<a href="/members/?key=staff_members" class="vf-icon dd vf-icon-CStaff badgeContainer " title="Staff" data-badge></a>
+<a href="/members/?key=staff_members" class="child-label">Staff</a>
+</div>
+<div class="child">
+<a href="/threads/contact-us.220922/" class="vf-icon dd vf-icon-CContact badgeContainer " title="Contact" data-badge></a>
+<a href="/threads/contact-us.220922/" class="child-label">Contact</a>
+</div>
+<div class="child">
+<a href="/forums/rules-information.710/" class="vf-icon dd vf-icon-CRules badgeContainer " title="Site Rules" data-badge></a>
+<a href="/forums/rules-information.710/" class="child-label">Site Rules</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-sicon vf-sicon-Maps badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Resources badgeContainer " data-badge></a>
+<a href class="vf-label">Resources</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/repositories/models.530/" class="vf-icon dd vf-icon-RModels badgeContainer " title="Models" data-badge></a>
+<a href="/repositories/models.530/" class="child-label">Models</a>
+</div>
+<div class="child">
+<a href="/repositories/skins.552/" class="vf-icon dd vf-icon-RSkins badgeContainer " title="Skins" data-badge></a>
+<a href="/repositories/skins.552/" class="child-label">Skins</a>
+</div>
+<div class="child">
+<a href="/repositories/icons.541/" class="vf-icon dd vf-icon-RIcons badgeContainer " title="Icons" data-badge></a>
+<a href="/repositories/icons.541/" class="child-label">Icons</a>
+</div>
+<div class="child">
+<a href="/repositories/spells.569/" class="vf-icon dd vf-icon-RSpells badgeContainer " title="Spells" data-badge></a>
+<a href="/repositories/spells.569/" class="child-label">Spells</a>
+</div>
+<div class="child">
+<a href="/forums/code.718/" class="vf-icon dd vf-icon-RCode badgeContainer " title="Code" data-badge></a>
+<a href="/forums/code.718/" class="child-label">Code</a>
+</div>
+<div class="child">
+<a href="/repositories/packs.542/" class="vf-icon dd vf-icon-RPacks badgeContainer " title="Packs" data-badge></a>
+<a href="/repositories/packs.542/" class="child-label">Packs</a>
+</div>
+<div class="child">
+<a href="/repositories/sounds.783/" class="vf-icon dd vf-icon-RSound badgeContainer " title="Sounds" data-badge></a>
+<a href="/repositories/sounds.783/" class="child-label">Sounds</a>
+</div>
+<div class="child">
+<a href="/repositories/tools.560/" class="vf-icon dd vf-icon-RTools badgeContainer " title="Tools" data-badge></a>
+<a href="/repositories/tools.560/" class="child-label">Tools</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-sicon vf-sicon-Tutorials badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+<div class="vf-button">
+<a href="/media" class="vf-sicon vf-sicon-Gallery badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-More badgeContainer " data-badge></a>
+<a href class="vf-label">Utility</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/pastebin" class="vf-icon dd vf-icon-MPastebin badgeContainer " title="Pastebin" data-badge></a>
+<a href="/pastebin" class="child-label">Pastebin</a>
+</div>
+<div class="child">
+<a href="/asset-scanner" class="vf-icon dd vf-icon-MAssetScanner badgeContainer " title="Asset Scanner" data-badge></a>
+<a href="/asset-scanner" class="child-label">Asset Scanner</a>
+</div>
+<div class="child">
+<a href="/icon-borderiser" class="vf-icon dd vf-icon-MIconBorder badgeContainer " title="Icon Borderiser" data-badge></a>
+<a href="/icon-borderiser" class="child-label">Icon Borderiser</a>
+</div>
+<div class="child">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-icon dd vf-icon-MSanityChecker badgeContainer " title="Model Checker" data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="child-label">Model Checker</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Support badgeContainer " data-badge></a>
+<a href class="vf-label">Support Us</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="https://hivemerchshop.com" class="vf-icon dd vf-icon-Shop badgeContainer " title="Shop" data-badge></a>
+<a href="https://hivemerchshop.com" class="child-label">Shop</a>
+</div>
+<div class="child">
+<a href="/pages/hero" class="vf-icon dd vf-icon-BecomeHero badgeContainer " title="Become a Hero" data-badge></a>
+<a href="/pages/hero" class="child-label">Become a Hero</a>
+</div>
+<div class="child">
+<a href="/pages/advertising" class="vf-icon dd vf-icon-BuyaBanner badgeContainer " title="Buy a Banner" data-badge></a>
+<a href="/pages/advertising" class="child-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<div class="vindit-feature-small size-2">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="Facebook" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="Twitter" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="YouTube" data-badge></a>
+</div>
+</div>
+<span class="vf-label">&nbsp;</span>
+</div>
+</div>
+</div>
+<div class="p-nav-opposite">
+<div class="p-navgroup p-account p-navgroup--guest">
+<a href="/pages/guest-hero/" class="vindit-sign-up-upgrade p-navgroup-link">Support Us</a>
+<a href="/login/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+<span class="p-navgroup-linkText">Log in</span>
+</a>
+<a href="/register/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+<span class="p-navgroup-linkText">Register</span>
+</a>
+</div>
+<div class="p-navgroup p-discovery">
+<a href="/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What&#039;s new" title="What&#039;s new">
+<i aria-hidden="true"></i>
+<span class="p-navgroup-linkText">What's new</span>
+</a>
+<a href="/search/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--search" data-xf-click="menu" data-xf-key="/" aria-label="Search" aria-expanded="false" aria-haspopup="true" title="Search">
+<i aria-hidden="true"></i>
+<span class="p-navgroup-linkText">Search</span>
+</a>
+<div class="menu menu--structural menu--wide" data-menu="menu" aria-hidden="true">
+<form action="/search/search" method="post" class="menu-content" data-xf-init="quick-search">
+<h3 class="menu-header">Search</h3>
+<div class="menu-row">
+<div class="inputGroup inputGroup--joined">
+<input type="text" class="input" name="keywords" placeholder="Search…" aria-label="Search" data-menu-autofocus="true" />
+<select name="constraints" class="js-quickSearch-constraint input" aria-label="Search within">
+<option value>Everywhere</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;}">Threads</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;,&quot;c&quot;:{&quot;nodes&quot;:[278],&quot;child_nodes&quot;:1}}">This forum</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;,&quot;c&quot;:{&quot;thread&quot;:7239}}">This thread</option>
+</select>
+</div>
+</div>
+<div class="menu-row">
+<label class="iconic"><input type="checkbox" name="c[title_only]" value="1" /><i aria-hidden="true"></i><span class="iconic-label">Search titles only
+<span tabindex="0" role="button" data-xf-init="tooltip" data-trigger="hover focus click" title="Tags will also be searched in content where tags are supported">
+<i class="fa--xf far fa-question-circle u-muted u-smaller" aria-hidden="true"></i>
+</span></span></label>
+</div>
+<div class="menu-row">
+<div class="inputGroup">
+<span class="inputGroup-text" id="ctrl_search_menu_by_member">By:</span>
+<input type="text" class="input" name="c[users]" data-xf-init="auto-complete" placeholder="Member" aria-labelledby="ctrl_search_menu_by_member" />
+</div>
+</div>
+<div class="menu-footer">
+<span class="menu-footer-controls">
+<button type="submit" class="button--primary button button--icon button--icon--search"><span class="button-text">Search</span></button>
+<a href="/search/" class="button"><span class="button-text">Advanced search…</span></a>
+</span>
+</div>
+<input type="hidden" name="_xfToken" value="1711482226,b7edb609c216258bae37807f267a0fe8" />
+</form>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<header class="p-header" id="header">
+<div class="p-header-inner">
+<div class="p-header-content">
+<div class="p-header-logo p-header-logo--image">
+<a href="https://www.hiveworkshop.com">
+<img src="/data/styles/7/styles/vindit-reforged/hive-logo.png" srcset alt="HIVE" width="250" height="156" />
+</a>
+</div>
+<div class="vindit-feature-buttons-wrap">
+<div class="vindit-feature-buttons" data-xf-init="vindit-feature-buttons">
+<div class="just-to-get-right-width"></div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Community badgeContainer " data-badge></a>
+<a href class="vf-label">Community</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/forums" class="vf-icon dd vf-icon-CForums badgeContainer " title="Forums" data-badge></a>
+<a href="/forums" class="child-label">Forums</a>
+</div>
+<div class="child">
+<a href="/whats-new" class="vf-icon dd vf-icon-CWhatsNew badgeContainer " title="What&#039;s New" data-badge></a>
+<a href="/whats-new" class="child-label">What&#039;s New</a>
+</div>
+<div class="child">
+<a href="/watched/threads" class="vf-icon dd vf-icon-CWatched badgeContainer " title="Watched" data-badge></a>
+<a href="/watched/threads" class="child-label">Watched</a>
+</div>
+<div class="child">
+<a href="https://discord.hiveworkshop.com/" class="vf-icon dd vf-icon-CDiscord badgeContainer " title="Discord" data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="child-label">Discord</a>
+</div>
+<div class="child">
+<a href="/streams" class="vf-icon dd vf-icon-CStreams badgeContainer " title="Streams" data-badge></a>
+<a href="/streams" class="child-label">Streams</a>
+</div>
+<div class="child">
+<a href="/members" class="vf-icon dd vf-icon-CMembers badgeContainer " title="Members" data-badge></a>
+<a href="/members" class="child-label">Members</a>
+</div>
+<div class="child">
+<a href="/members/?key=staff_members" class="vf-icon dd vf-icon-CStaff badgeContainer " title="Staff" data-badge></a>
+<a href="/members/?key=staff_members" class="child-label">Staff</a>
+</div>
+<div class="child">
+<a href="/threads/contact-us.220922/" class="vf-icon dd vf-icon-CContact badgeContainer " title="Contact" data-badge></a>
+<a href="/threads/contact-us.220922/" class="child-label">Contact</a>
+</div>
+<div class="child">
+<a href="/forums/rules-information.710/" class="vf-icon dd vf-icon-CRules badgeContainer " title="Site Rules" data-badge></a>
+<a href="/forums/rules-information.710/" class="child-label">Site Rules</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-icon vf-icon-Maps badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Resources badgeContainer " data-badge></a>
+<a href class="vf-label">Resources</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/repositories/models.530/" class="vf-icon dd vf-icon-RModels badgeContainer " title="Models" data-badge></a>
+<a href="/repositories/models.530/" class="child-label">Models</a>
+</div>
+<div class="child">
+<a href="/repositories/skins.552/" class="vf-icon dd vf-icon-RSkins badgeContainer " title="Skins" data-badge></a>
+<a href="/repositories/skins.552/" class="child-label">Skins</a>
+</div>
+<div class="child">
+<a href="/repositories/icons.541/" class="vf-icon dd vf-icon-RIcons badgeContainer " title="Icons" data-badge></a>
+<a href="/repositories/icons.541/" class="child-label">Icons</a>
+</div>
+<div class="child">
+<a href="/repositories/spells.569/" class="vf-icon dd vf-icon-RSpells badgeContainer " title="Spells" data-badge></a>
+<a href="/repositories/spells.569/" class="child-label">Spells</a>
+</div>
+<div class="child">
+<a href="/forums/code.718/" class="vf-icon dd vf-icon-RCode badgeContainer " title="Code" data-badge></a>
+<a href="/forums/code.718/" class="child-label">Code</a>
+</div>
+<div class="child">
+<a href="/repositories/packs.542/" class="vf-icon dd vf-icon-RPacks badgeContainer " title="Packs" data-badge></a>
+<a href="/repositories/packs.542/" class="child-label">Packs</a>
+</div>
+<div class="child">
+<a href="/repositories/sounds.783/" class="vf-icon dd vf-icon-RSound badgeContainer " title="Sounds" data-badge></a>
+<a href="/repositories/sounds.783/" class="child-label">Sounds</a>
+</div>
+<div class="child">
+<a href="/repositories/tools.560/" class="vf-icon dd vf-icon-RTools badgeContainer " title="Tools" data-badge></a>
+<a href="/repositories/tools.560/" class="child-label">Tools</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-icon vf-icon-Tutorials badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+<div class="vf-button">
+<a href="/media" class="vf-icon vf-icon-Gallery badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-More badgeContainer " data-badge></a>
+<a href class="vf-label">Utility</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/pastebin" class="vf-icon dd vf-icon-MPastebin badgeContainer " title="Pastebin" data-badge></a>
+<a href="/pastebin" class="child-label">Pastebin</a>
+</div>
+<div class="child">
+<a href="/asset-scanner" class="vf-icon dd vf-icon-MAssetScanner badgeContainer " title="Asset Scanner" data-badge></a>
+<a href="/asset-scanner" class="child-label">Asset Scanner</a>
+</div>
+<div class="child">
+<a href="/icon-borderiser" class="vf-icon dd vf-icon-MIconBorder badgeContainer " title="Icon Borderiser" data-badge></a>
+<a href="/icon-borderiser" class="child-label">Icon Borderiser</a>
+</div>
+<div class="child">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-icon dd vf-icon-MSanityChecker badgeContainer " title="Model Checker" data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="child-label">Model Checker</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Support badgeContainer " data-badge></a>
+<a href class="vf-label">Support Us</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="https://hivemerchshop.com" class="vf-icon dd vf-icon-Shop badgeContainer " title="Shop" data-badge></a>
+<a href="https://hivemerchshop.com" class="child-label">Shop</a>
+</div>
+<div class="child">
+<a href="/pages/hero" class="vf-icon dd vf-icon-BecomeHero badgeContainer " title="Become a Hero" data-badge></a>
+<a href="/pages/hero" class="child-label">Become a Hero</a>
+</div>
+<div class="child">
+<a href="/pages/advertising" class="vf-icon dd vf-icon-BuyaBanner badgeContainer " title="Buy a Banner" data-badge></a>
+<a href="/pages/advertising" class="child-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<div class="vindit-feature-small size-2">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook badgeContainer " data-xf-init="tooltip" data-placement="right" title="Facebook" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter badgeContainer " data-xf-init="tooltip" data-placement="right" title="Twitter" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube badgeContainer " data-xf-init="tooltip" data-placement="right" title="YouTube" data-badge></a>
+</div>
+</div>
+<span class="vf-label">&nbsp;</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+<div class="offCanvasMenu-content">
+<div class="offCanvasMenu-header">
+Menu
+<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+</div>
+<div class="p-offCanvasRegisterLink">
+<div class="offCanvasMenu-linkHolder">
+<a href="/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+Log in
+</a>
+</div>
+<hr class="offCanvasMenu-separator" />
+<div class="offCanvasMenu-linkHolder">
+<a href="/register/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+Register
+</a>
+</div>
+<hr class="offCanvasMenu-separator" />
+</div>
+<div class="block vf-side-menu " style="--vf-button-sprite-dimension: 50px">
+<div class="block-container">
+<div class="block-minorHeader">Community</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/forums" class="vf-sicon vf-sicon-CForums-100px badgeContainer " data-badge></a>
+<a href="/forums" class="vf-label">Forums</a>
+</div>
+<div class="vf-button">
+<a href="/whats-new" class="vf-sicon vf-sicon-CWhatsNew-100px badgeContainer " data-badge></a>
+<a href="/whats-new" class="vf-label">What&#039;s New</a>
+</div>
+<div class="vf-button">
+<a href="/watched/threads" class="vf-sicon vf-sicon-CWatched-100px badgeContainer " data-badge></a>
+<a href="/watched/threads" class="vf-label">Watched</a>
+</div>
+<div class="vf-button">
+<a href="https://discord.hiveworkshop.com/" class="vf-sicon vf-sicon-CDiscord-100px badgeContainer " data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="vf-label">Discord</a>
+</div>
+<div class="vf-button">
+<a href="/streams" class="vf-sicon vf-sicon-CStreams-100px badgeContainer " data-badge></a>
+<a href="/streams" class="vf-label">Streams</a>
+</div>
+<div class="vf-button">
+<a href="/members" class="vf-sicon vf-sicon-CMembers-100px badgeContainer " data-badge></a>
+<a href="/members" class="vf-label">Members</a>
+</div>
+<div class="vf-button">
+<a href="/members/?key=staff_members" class="vf-sicon vf-sicon-CStaff-100px badgeContainer " data-badge></a>
+<a href="/members/?key=staff_members" class="vf-label">Staff</a>
+</div>
+<div class="vf-button">
+<a href="/threads/contact-us.220922/" class="vf-sicon vf-sicon-CContact-100px badgeContainer " data-badge></a>
+<a href="/threads/contact-us.220922/" class="vf-label">Contact</a>
+</div>
+<div class="vf-button">
+<a href="/forums/rules-information.710/" class="vf-sicon vf-sicon-CRules-100px badgeContainer " data-badge></a>
+<a href="/forums/rules-information.710/" class="vf-label">Site Rules</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Maps</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-sicon vf-sicon-Maps-100px badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Resources</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/repositories/models.530/" class="vf-sicon vf-sicon-RModels-100px badgeContainer " data-badge></a>
+<a href="/repositories/models.530/" class="vf-label">Models</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/skins.552/" class="vf-sicon vf-sicon-RSkins-100px badgeContainer " data-badge></a>
+<a href="/repositories/skins.552/" class="vf-label">Skins</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/icons.541/" class="vf-sicon vf-sicon-RIcons-100px badgeContainer " data-badge></a>
+<a href="/repositories/icons.541/" class="vf-label">Icons</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/spells.569/" class="vf-sicon vf-sicon-RSpells-100px badgeContainer " data-badge></a>
+<a href="/repositories/spells.569/" class="vf-label">Spells</a>
+</div>
+<div class="vf-button">
+<a href="/forums/code.718/" class="vf-sicon vf-sicon-RCode-100px badgeContainer " data-badge></a>
+<a href="/forums/code.718/" class="vf-label">Code</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/packs.542/" class="vf-sicon vf-sicon-RPacks-100px badgeContainer " data-badge></a>
+<a href="/repositories/packs.542/" class="vf-label">Packs</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/sounds.783/" class="vf-sicon vf-sicon-RSound-100px badgeContainer " data-badge></a>
+<a href="/repositories/sounds.783/" class="vf-label">Sounds</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/tools.560/" class="vf-sicon vf-sicon-RTools-100px badgeContainer " data-badge></a>
+<a href="/repositories/tools.560/" class="vf-label">Tools</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Tutorials</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-sicon vf-sicon-Tutorials-100px badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Gallery</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/media" class="vf-sicon vf-sicon-Gallery-100px badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Utility</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/pastebin" class="vf-sicon vf-sicon-MPastebin-100px badgeContainer " data-badge></a>
+<a href="/pastebin" class="vf-label">Pastebin</a>
+</div>
+<div class="vf-button">
+<a href="/asset-scanner" class="vf-sicon vf-sicon-MAssetScanner-100px badgeContainer " data-badge></a>
+<a href="/asset-scanner" class="vf-label">Asset Scanner</a>
+</div>
+<div class="vf-button">
+<a href="/icon-borderiser" class="vf-sicon vf-sicon-MIconBorder-100px badgeContainer " data-badge></a>
+<a href="/icon-borderiser" class="vf-label">Icon Borderiser</a>
+</div>
+<div class="vf-button">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-sicon vf-sicon-MSanityChecker-100px badgeContainer " data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-label">Model Checker</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Support Us</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="https://hivemerchshop.com" class="vf-sicon vf-sicon-Shop-100px badgeContainer " data-badge></a>
+<a href="https://hivemerchshop.com" class="vf-label">Shop</a>
+</div>
+<div class="vf-button">
+<a href="/pages/hero" class="vf-sicon vf-sicon-BecomeHero-100px badgeContainer " data-badge></a>
+<a href="/pages/hero" class="vf-label">Become a Hero</a>
+</div>
+<div class="vf-button">
+<a href="/pages/advertising" class="vf-sicon vf-sicon-BuyaBanner-100px badgeContainer " data-badge></a>
+<a href="/pages/advertising" class="vf-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">&nbsp;</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook-100px badgeContainer " data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter-100px badgeContainer " data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube-100px badgeContainer " data-badge></a>
+</div>
+</div>
+</div>
+</div>
+<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+<div class="offCanvasMenu-installBanner-header">Install the app</div>
+<button type="button" class="js-installPromptButton button"><span class="button-text">Install</span></button>
+</div>
+</div>
+</div>
+<div class="p-body">
+<div class="p-body-inner">
+
+<div data-xf-init="vindit-rotator" class="vindit-rotator popuplated" data-ads="[{&quot;title&quot;:&quot;YOUR PROJECT HERE&quot;,&quot;url&quot;:&quot;\/ads\/2\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/2-big.jpg?1671984466&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/2-small.jpg?1671984466&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Chronicles of the Second War&quot;,&quot;url&quot;:&quot;\/ads\/5\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/5-big.jpg?1704463545&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/5-small.jpg?1704463545&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Legends of Arkain&quot;,&quot;url&quot;:&quot;\/ads\/6\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/6-big.jpg?0&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/6-small.jpg?0&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Sunken City&quot;,&quot;url&quot;:&quot;\/ads\/7\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/7-big.jpg?1709242868&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/7-small.jpg?1709242868&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Frostcraft&quot;,&quot;url&quot;:&quot;\/ads\/9\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/9-big.jpg?1631304471&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/9-small.jpg?1631304471&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Daemonic Sword ORPG&quot;,&quot;url&quot;:&quot;\/ads\/11\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/11-big.jpg?1636533817&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/11-small.jpg?1636533817&quot;,&quot;weight&quot;:4},{&quot;title&quot;:&quot;Reforged UI Designer&quot;,&quot;url&quot;:&quot;\/ads\/12\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/12-big.jpg?1636407708&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/12-small.jpg?1636407708&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Re-Reforged&quot;,&quot;url&quot;:&quot;\/ads\/14\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/14-big.jpg?1709241162&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/14-small.jpg?1709241162&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Hive Heroes&quot;,&quot;url&quot;:&quot;\/ads\/16\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/16-big.jpg?1677700993&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/16-small.jpg?1677700993&quot;,&quot;weight&quot;:4},{&quot;title&quot;:&quot;The Heart of Storms&quot;,&quot;url&quot;:&quot;\/ads\/32\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/32-big.jpg?1676072362&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/32-small.jpg?1676072362&quot;,&quot;weight&quot;:1}]">
+</div>
+<ul class="notices notices--scrolling notices--isMulti js-notices" data-xf-init="notices" data-type="scrolling" data-scroll-interval="6">
+<li class="notice js-notice notice--primary" data-notice-id="359" data-delay-duration="0" data-display-duration="0" data-auto-dismiss data-visibility>
+<div class="notice-content">
+<a href="/account/dismiss-notice?notice_id=359" class="notice-dismiss js-noticeDismiss" data-xf-init="tooltip" title="Dismiss notice"></a>
+<a href="https://www.hiveworkshop.com/threads/%F0%9F%8E%A8texturing-contest-33-peaceful-npc.351609/"><img align="left" style="padding-right: 10px; padding-bottom: 10px;" src="https://www.hiveworkshop.com/attachments/texturingcontest33-png.455615/"></a>🏆 Texturing Contest #33 is OPEN! Contestants must re-texture a SD unit model found in-game (Warcraft 3 Classic), recreating the unit into a peaceful NPC version. 🔗<a href="https://www.hiveworkshop.com/threads/%F0%9F%8E%A8texturing-contest-33-peaceful-npc.351609/">Click here to enter!</a>
+</div>
+</li>
+<li class="notice js-notice notice--primary" data-notice-id="362" data-delay-duration="0" data-display-duration="0" data-auto-dismiss data-visibility>
+<div class="notice-content">
+<a href="/account/dismiss-notice?notice_id=362" class="notice-dismiss js-noticeDismiss" data-xf-init="tooltip" title="Dismiss notice"></a>
+<a href="https://www.hiveworkshop.com/threads/%F0%9F%92%AChd-modeling-contest-6-theme-discussion.353157/"><img align="left" style="padding-right: 10px; padding-bottom: 10px;" src="https://www.hiveworkshop.com/attachments/modelthemediscussion-png.414923/?hash=6b8efec2632c4f87d2637827ea893ee6"></a>It's time for the first HD Modeling Contest of 2024. Join the theme discussion for Hive's HD Modeling Contest #6! <a href="https://www.hiveworkshop.com/threads/%F0%9F%92%AChd-modeling-contest-6-theme-discussion.353157/">Click here to post your idea!</a>
+</div>
+</li>
+</ul>
+<style>
+		ins.adsbygoogle[data-ad-status="unfilled"] {
+		    display: none !important;
+		}
+		</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2513844252750044" crossorigin="anonymous"></script>
+<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="https://www.hiveworkshop.com" itemprop="item">
+<span itemprop="name">Home</span>
+</a>
+<meta itemprop="position" content="1" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/" itemprop="item">
+<span itemprop="name">Forums</span>
+</a>
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/#warcraft-iii.255" itemprop="item">
+<span itemprop="name">Warcraft III</span>
+</a>
+<meta itemprop="position" content="3" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/warcraft-3-tutorials.206/" itemprop="item">
+<span itemprop="name">Warcraft 3 Tutorials</span>
+</a>
+<meta itemprop="position" content="4" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/misc-general-mapping-tutorials.278/" itemprop="item">
+<span itemprop="name">Misc/General Mapping Tutorials</span>
+</a>
+<meta itemprop="position" content="5" />
+</li>
+</ul>
+<noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It may not display this or other websites correctly.<br/>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+<div class="p-body-header">
+<div class="p-title ">
+<h1 class="p-title-value">World Editor FAQ - Work in Progress</h1>
+</div>
+</div>
+<div class="p-body-main  ">
+<div class="p-body-contentCol"></div>
+<div class="p-body-content">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2513844252750044" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2513844252750044" data-ad-slot="8264602515" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+			if (window.innerWidth <= 900) {
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+			}
+		</script>
+<div class="p-body-pageContent">
+<div class="block block--messages" data-xf-init data-type="post" data-href="/inline-mod/" data-search-target="*">
+<span class="u-anchorTarget" id="posts"></span>
+<div class="block-outer">
+<dl class="blockStatus">
+<dt>Status</dt>
+<dd class="blockStatus-message blockStatus-message--locked">
+Not open for further replies.
+</dd>
+</dl>
+</div>
+<div class="block-outer"></div>
+<div class="block-outer js-threadStatusField"></div>
+<div class="block-container lbContainer" data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-lb-id="thread-7239" data-lb-universal="0">
+<div class="block-body js-replyNewMessageContainer">
+<article class="message message--post js-post js-inlineModContainer  " data-author="Ralle" data-content="post-68938" id="js-post-68938">
+<span class="u-anchorTarget" id="post-68938"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user  is-staff">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 25px; min-height: 19px; background: url(/data/rarank-files/55-60.png?1665598739) no-repeat center left; background-size: 20px 19px"><a href="/members/ralle.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin ">Ralle</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/ralle.1/" class="avatar avatar--m" data-user-id="1" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/0/1.jpg?1467385793" alt="Ralle" class="avatar-u1-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 25px; min-height: 19px; background: url(/data/rarank-files/55-60.png?1665598739) no-repeat center left; background-size: 20px 19px"><a href="/members/ralle.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin ">Ralle</span></a></span>
+</h4>
+<div class="userBanner userBanner userBanner--primary message-userBanner" itemprop="jobTitle"><span class="userBanner-before"></span><strong>Owner</strong><span class="userBanner-after"></span></div>
+</div>
+<div class="experience-bar lvf_70 lv_77" data-xf-init="tooltip" title="58,160 / 59,290 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 26.14%"></div>
+</div>
+Level 77
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Oct 6, 2004</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>10,100</dd>
+</dl>
+</div>
+<div class="vindit-medals-message-showcase">
+<div class="group">
+<a href="/members/ralle.1/medals"><img src="/data/medal/690_r.png?1607041041" title="Craftsmanship: Original Mason" data-xf-init="tooltip" /></a>
+</div>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-1" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">44</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-1" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/ralle.1/resources">Resources</a></h4>
+<a href="/repositories/560/?author=Ralle" class="menu-linkRow">Tools <span class="count">5</span></a>
+<a href="/repositories/564/?author=Ralle" class="menu-linkRow">Maps <span class="count">10</span></a>
+<a href="/repositories/783/?author=Ralle" class="menu-linkRow">Sounds <span class="count">1</span></a>
+<a href="/members/ralle.1/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">28</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/world-editor-faq-work-in-progress.7239/post-68938" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2006-10-26T16:57:53+0100" data-time="1161878273" data-date-string="Oct 26, 2006" data-time-string="4:57 PM" title="Oct 26, 2006 at 4:57 PM" itemprop="datePublished">Oct 26, 2006</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/world-editor-faq-work-in-progress.7239/post-68938" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/68938/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/world-editor-faq-work-in-progress.7239/post-68938" rel="nofollow">
+#1
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-68938" data-lb-caption-desc="Ralle &middot; Oct 26, 2006 at 4:57 PM">
+<article class="message-body js-selectToQuote">
+<div>
+<div class="bbWrapper"><a id="CON"></a><a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TWE">World Editor Basics</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TOE">The Object Editor</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TOM">The Object Manager</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TIM">The Import Manager</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TTE">The Terrain Editor</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TTG">The Trigger Editor</a><br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="TSE">The Sound Editor</a><br/>
+<br/>
+<span style="font-size: 18px"><b><span style="color: RoyalBlue">Introduction</span></b></span><br/>
+This FAQ is a collection of several frequently asked questions and short tutorials about performing different tasks in Blizzard's Warcraft III World Editor. The FAQ serves as a basic reference point: it should (hopefully) assist mapmakers of all skill levels. This FAQ is by no means definitive: it is still under development- please post any suggestions or recommendations in this thread. <br/>
+<br/>
+<br/>
+<a id="TWE"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">World Editor Basics</span></b></span><br/>
+<br/>
+<div class="bbCodeBox">
+<blockquote class="bbCodeBlock">
+<div class="bbCodeBlock-title">
+Things To Keep In Mind by Healingpoison
+</div>
+<div class="bbCodeBlock-content">
+These are a couple things I think everyone should know when making a map.<br/>
+<br/>
+<div class="bbTable">
+<table style="max-width: 100%"><tr><td><span style="font-size: 12px"><b>Test your map regularly.</b></span><br/>
+Most important: test your map often, as you put in new triggers test them to make sure they work. The last thing you want is to make your whole map (triggers and all) and then find out one trigger doesn't work, then you have to go through and check each trigger which can be very difficult.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Save your map often.</b></span><br/>
+Save your map often (under a new file name) before new triggers are added or new resources are imported. If a map should somehow become corrupt, having a recent backup is critical: it could make the difference between loosing five minutes of work versus five months.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Stay on topic.</b></span><br/>
+Keep being focused around one topic (This may not apply to some of you more senior people), especially if your new to world editor its important to stay on one topic. I know it is easy to drift off into other ideas and then attempt to mush them all together, but you should try to focus your map, for example: if you have a Tower Defense it wouldn't fit to have the players building a hero along the side lines, I mean think about people play TDs because they like the fast paced action and the idea of building defenses.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Start small.</b></span><br/>
+Do not try to go past your abilities. Map making is like skiing, when your learning to ski you just don't start out on the slope with the most black diamonds, you start easy on a green or blue, in map making you shouldn't try to start putting in advanced triggers that you don't understand, stick with the easy stuff first, If your making an AoS just start with the basic spawing and hero selection triggers, try to refrain from advanced triggering until your at the point where your map requires it.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Imported Resources:</b></span><br/>
+Maps do not need custom models, skins, and icons to be great. One great example is Warhammer 40k TD! Any map can be great without imported items. Also, its alright if you don't understand how to import such items. Don't get all upset if you cant get customs into your map, just keep working on it.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Don't give up!</b></span><br/>
+Keep at it. Giving up on a map you have worked hard to create is one of the worst things you can do in world editor. I know i have do it before, once I was working on a Warhammer 40k battle and I had nearly finished, I had all the terrain, units, and triggers, but then I gave up on it and started making a new map, and now I'm making a map just like that one and i wish i had never gotten rid of that first version.<br/>
+<br/>
+</td></tr><tr><td><span style="font-size: 12px"><b>Be open.</b></span><br/>
+Sharing your ideas with other people to get their opinion is always a good idea. If your stuck when your writing a storyline for your map and you don't know whether the heroes should get squashed by trolls or shot by dwarfs, ask someone. Also, you can have people help you make your map, its not like its a shame to have someone else work on your map with you, in fact its probably going to make a better map.<br/>
+(Thanks Ralle)<br/>
+<br/>
+</td></tr></table>
+</div>
+</div>
+</blockquote>
+</div><span style="font-size: 12px"><b><u>Increase the speed of the World Editor</u></b></span><br/>
+Many people complain about World Editor lag, especially when working in the Object Editor. This is because of the Brush List, a list of all the objects included in the editor. For example, when you rename a unit the editor will completely refresh the Brush List: this could require up to 20 seconds. If you disable the Brush List, you will find that you can instantly rename a unit and not have to wait at all.<br/>
+It's easy to disable the Brush List:<br/>
+<ul>
+<li data-xf-list-type="ul">From the main WE menu choose: <u>W</u>indow</li>
+<li data-xf-list-type="ul">De-select the item: <b>Brush List</b></li>
+</ul><br/>
+<span style="font-size: 12px"><b><u>Easy backup</u></b></span><br/>
+If your map has been corrupt, go look in the Maps/Test folder, there is always a backup map (WorldEditTestMap.w3x) from the last time you tested.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Disable auto-save</u></b></span><br/>
+File/Preferences/General and uncheck Autosave.<br/>
+NOTE: Disabling autosave is a good idea, it can often be annoying and can also ruin your map if you do something wrong and it suddenly autosaves.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Taking screenshots</u></b></span><br/>
+Hit the Print Screen key (just over the Insert button) to take a screenshot.<br/>
+NOTE: For best results, select View&gt;Lock to Game View Settings.<br/>
+NOTE: Screenshots will be saved in the Warcraft 3/Screenshots Directory.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Controlling Cameras</u></b></span><br/>
+Zooming: Use the scrolling wheel to zoom in and out.<br/>
+Changing angle: Hold down CTRL and hold down rightclick while you rotate camera in any direction with the mouse.<br/>
+When zooming far out, black mask will appear, hold down CTRL and use the scrolling wheel to make it disappear.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Different views</u></b></span><br/>
+x change to letterbox view.<br/>
+v change to game view.<br/>
+c change to camera view.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Working with colorizing and line breaks</u></b></span><br/>
+Warcraft 3 have it's own text formatting system. It allows you to put color on text strings and make linebreaks. Every tag starts with a '|' (without the quotes) followed by a letter.<br/>
+<br/>
+So the color tag is '|c' followed by a 6 digit hexadecimal (RR GG BB) color code and a 2 digit hexadecimal transparency code. But the transparency code is not used so just leave it as 'ff'. The tag ends with a '|r'.<br/>
+Example: 'Hello my name is Rasmus'. So now I want to color the part 'name' in red and it will look like this: 'Hello my |cff0000ffname|r is Rasmus'.<br/>
+<br/>
+Some places when you want to enter a string, it is not possible to make a linebreak by pressing ENTER and then you have to write '|n' at the place you want to make a linebreak.<br/>
+<br/>
+[self=&quot;http://hiveworkshop.com/forums/showthread.php?t=31386&quot;]Warcraft III Color Tags and Linebreaks[/self] covers this topic in much greater detail.<br/>
+<br/>
+<br/>
+<div class="bbTable">
+<table style="max-width: 100%"><tr><td><span style="font-size: 12px"><b><u>Custom Minimap Preview</u></b></span><br/>
+Custom minimap previews for custom scenarios is a big fashion. Some people might actually leave the game you've hosted because they think that the map sucks when it doesn't have a minimap preview. So here's a guide on how to make your own.<br/>
+<br/>
+Open your favorite image editor and make yourself a good picture. You have to keep in mind that the image should have the dimensions of either 256x256 or 128x128.<br/>
+Save it as .jpg or .tga if you can. If not, go get the tool <a href="http://www.forums.hiveworkshop.com/resources.php?id=343&amp;cat=all" target="_blank" class="link link--external" rel="noopener">Warcraft 3 Image Extractor II</a>, open up your image and save it as .blp or .tga.<br/>
+<br/>
+Open up World Editor and then open the Import Manager and import the image.<br/>
+<br/>
+Double-Click on the image and tick &quot;Use Custom Path&quot; and set the path to:<br/>
+<b>war3mapPreview.tga</b> or <b>war3mapPreview.blp</b> to have the image being the minimap preview.<br/>
+You can also save it as <b>war3mapMap.tga</b> or <b>war3mapMap.blp</b> to make it being the in-game minimap.</td></tr></table>
+</div><br/>
+<div class="bbTable">
+<table style="max-width: 100%"><tr><td><span style="font-size: 12px"><b><u>Importing a Minimap Image</u></b></span><br/>
+Importing Minimap images is easy. You will just have to make an image in .tga or .blp format and import it into your map and change its name. This method is used in many maps and makes the map more interesting for people who might join when hosting a game.<br/>
+You can choose between two sizes of images: 256x256 and 128x128, I prefer using 256x256 because there is a world's difference between the quality of these images. But also a world's difference in size :S<br/>
+<br/>
+<b>Creating the Image (with advanced image editing program)</b><br/>
+Let's say I want to make an image, so I open up Photoshop, Photoimpact, Gimp... You will need an advanced image editing program and not just paint. You can get Photo Impact <a href="http://www.ulead.com/pi/runme.htm" target="_blank" class="link link--external" rel="noopener">Here</a>.<br/>
+<br/>
+Remember to make the image 256x256 or 128x128 in size and save it as .tga!<br/>
+<script class="js-extraPhrases" type="application/json">
+			{
+				"lightbox_close": "Close",
+				"lightbox_next": "Next",
+				"lightbox_previous": "Previous",
+				"lightbox_error": "The requested content cannot be loaded. Please try again later.",
+				"lightbox_start_slideshow": "Start slideshow",
+				"lightbox_stop_slideshow": "Stop slideshow",
+				"lightbox_full_screen": "Full screen",
+				"lightbox_thumbnails": "Thumbnails",
+				"lightbox_download": "Download",
+				"lightbox_share": "Share",
+				"lightbox_zoom": "Zoom",
+				"lightbox_new_window": "New window",
+				"lightbox_toggle_sidebar": "Toggle sidebar"
+			}
+			</script>
+<div class="bbImageWrapper  js-lbImage" title="minimap.jpg" data-src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap.jpg&amp;hash=2f4b1d708fc60f7663a3c0bf5f5a6837" data-lb-sidebar-href data-lb-caption-extra-html data-single-image="1">
+<img src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap.jpg&amp;hash=2f4b1d708fc60f7663a3c0bf5f5a6837" data-url="http://hiveworkshop.com/gfx/tutorials/minimap.jpg" class="bbImage" data-zoom-target="1" style alt="minimap.jpg" title width height loading="lazy" />
+</div><br/>
+<br/>
+<b>Creating the Image (using any image editing program)</b><br/>
+Create a new image, set the size to 256x256 and save it as .jpg.<br/>
+Then open up Wc3ImageExtractor (get it <a href="https://www.hiveworkshop.com/forum/dload.php?action=file&amp;file_id=2" class="link link--internal">here</a>) <br/>
+<br/>
+Click <b>Open</b> -&gt; <b>Image</b> and open your picture, then click <b>Save</b> -&gt; <b>Image</b> and save it as a .tga or .blp image.<br/>
+<br/>
+<b>Importing the Image</b><br/>
+Open up <b>World Editor</b>, then <b>Import Manager</b> and press <b>Import File</b>.<br/>
+After that, double click on the imported file in the Import Manager, tick <b>Use Custom Path</b> and set the custom path to one of these:<br/>
+<br/>
+<b>war3mapPreview.tga</b> - this is the preview people can see when joining the game.<br/>
+<div class="bbImageWrapper  js-lbImage" title="minimap1.jpg" data-src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap1.jpg&amp;hash=b8199fab110a9a9c5b237e7ad45eb2c9" data-lb-sidebar-href data-lb-caption-extra-html data-single-image="1">
+<img src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap1.jpg&amp;hash=b8199fab110a9a9c5b237e7ad45eb2c9" data-url="http://hiveworkshop.com/gfx/tutorials/minimap1.jpg" class="bbImage" data-zoom-target="1" style alt="minimap1.jpg" title width height loading="lazy" />
+</div><br/>
+<br/>
+<b>war3mapMap.tga</b> - this is the in-game minimap which you can see when present in the game.<br/>
+<div class="bbImageWrapper  js-lbImage" title="minimap2.jpg" data-src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap2.jpg&amp;hash=9908c980e290ad82d06d2a98653c5170" data-lb-sidebar-href data-lb-caption-extra-html data-single-image="1">
+<img src="/proxy.php?image=http%3A%2F%2Fhiveworkshop.com%2Fgfx%2Ftutorials%2Fminimap2.jpg&amp;hash=9908c980e290ad82d06d2a98653c5170" data-url="http://hiveworkshop.com/gfx/tutorials/minimap2.jpg" class="bbImage" data-zoom-target="1" style alt="minimap2.jpg" title width height loading="lazy" />
+</div><br/>
+<br/>
+<span style="font-size: 12px"><b><u>Custom Loading Screen Images</u></b></span><br/>
+Magos' War3 Model Editor Can easily create custom loading screens.<br/>
+<a href="https://www.hiveworkshop.com/forums/showthread.php?t=7927" class="link link--internal">Custom Loading Screen Tutorial V1.5</a> shows an alternate method.<br/>
+</td></tr></table>
+</div><br/>
+<br/>
+<a id="TOE"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">The Object Editor</span></b></span><br/>
+<br/>
+<span style="font-size: 12px"><b><u>Copy objects (doodads, units etc) from map to map</u></b></span><br/>
+Right-click the object you want to move, press Copy, then open the new map, right-click and press paste.<br/>
+NOTE: Some units' custom abilities may become corrupt during this process, just reset their abilities (this wont delete any of your objects).<br/>
+<br/>
+<span style="font-size: 15px"><b>Heroes</b></span><br/>
+<br/>
+<span style="font-size: 12px"><b><u>Creating new heroes</u></b></span><br/>
+Two methods exist for creating new hero's.<br/>
+<ol>
+<li data-xf-list-type="ol">From the Object Editor file menu, select <u>N</u>ew Custom Unit; the Create New Custom Unit dialog appears. Select a unit from the interface and press OK. </li>
+<li data-xf-list-type="ol">Choose a hero (paladin, warden etc.), right-click and select <u>C</u>opy Unit, then right-click again and press <u>P</u>aste Unit.</li>
+</ol>Edit the new heroes' stats to suit your requirements.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Heroes past level 5 by creeping</u></b></span><br/>
+Normally heroes stop gaining experience when they have reached level 5, but it's actually very easy to change those limits.<br/>
+Go to &quot;Advanced&quot; -&gt; &quot;Gameplay Constants&quot;<br/>
+Tick &quot;Use Custom Gameplay Constants&quot;<br/>
+Find the field called &quot;Hero XP Gained - Creep Reduction Table&quot;<br/>
+This is the table where you can see how much experience you get on each level. As default it's set to &quot;80,70,60,50,0&quot; which we can put in a table like this:<br/>
+1 - 80%<br/>
+2 - 70%<br/>
+3 - 60%<br/>
+4 - 50%<br/>
+5 - 0%<br/>
+So by changing the 5th limit to 40% instead, you will be enabled to reach level 6. Then at level 6,7,8,9,10 you will still receive 40% experience so you might want to add more values to it.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Heroes past level 10</u></b></span><br/>
+In many WarCraft scenarios you can now raise a hero's level to above level 10. This is done by changing one single value.<br/>
+Go to &quot;Advanced&quot; -&gt; &quot;Gameplay Constants&quot;<br/>
+Tick &quot;Use Custom Gameplay Constants&quot;<br/>
+Find the field called &quot;Hero Maximum Level&quot;<br/>
+Set this to whatever you want the maximum level to be.<br/>
+NOTE: Maximum is 10,000.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Converting a non-hero unit to a hero</u></b></span><br/>
+It is not possible to actually convert a unit to a hero directly. But you can always copy all the important stats, models, abilities and paste them on to the other character.<br/>
+<br/>
+<div class="bbTable">
+<table style="max-width: 100%"><tr><td><span style="font-size: 12px"><b><u>Using morphed models</u></b></span><br/>
+It's possible (but a little tricky) to change a unit's standard model to a morphed Demon Hunter, Robo-Goblin etc. The problem is that a models like the Demon Hunter have both morphed and standard models in one single mdx file. So you need to send a morph tag to it so the game knows how to display units using such models.<br/>
+<br/>
+<a href="https://www.hiveworkshop.com/attachments/morph-jpg.3981/" target="_blank" class="js-lbImage" data-lb-sidebar-href data-lb-caption-extra-html><img src="https://www.hiveworkshop.com/data/attachments/2/2566-7dec1385af602a9ae5128a2bee223c8b.jpg" class="bbImage " style alt="morph.jpg" title="morph.jpg" width="100" height="69" loading="lazy" /></a><br/>
+<br/>
+<b>In the Object Editor</b><br/>
+Set the model of the unit to the standard model of the morphed model e.g:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Art - Model File: [U]Tinker, Tinker[/U]</code></pre>
+</div>
+</div><br/>
+Here comes what way we want the unit to be displayed, set this value:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Art - Required Animation Names: [U]Alternate[/U]</code></pre>
+</div>
+</div><br/>
+The value &quot;Alternate&quot; seems to be used for all morphs on units that have the morphed value in the same model file.<br/>
+<br/>
+<b>This trick also works with:</b><br/>
+<ul>
+<li data-xf-list-type="ul">Druid of the Claw <i>(Night Elf, morphed to bear)</i></li>
+<li data-xf-list-type="ul">Druid of the Talon <i>(Night Elf, morphed to crow)</i></li>
+<li data-xf-list-type="ul">Gargoyle <i>(Undead, morphed to stoneform)</i></li>
+<li data-xf-list-type="ul">Obsidian Statue <i>(Undead, morphed to destroyer-form)</i></li>
+<li data-xf-list-type="ul">Troll Headhunter <i>(Night Elf, morphed to berserker)</i></li>
+</ul></td></tr></table>
+</div><br/>
+<span style="font-size: 12px"><b><u>Viewing raw object name</u></b></span><br/>
+If you need an objects raw name, hit CTRL + D to see it.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Autofill information</u></b></span><br/>
+When making skills with many levels it's good to right-click on the first level and click Auto Fill Levels and set how you want it to be.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Setting units damage</u></b></span><br/>
+When it's your first time visiting the Object Editor, it might be quite overwhelming seeing that changing the damage of a unit requires 3 values, Damage Base, Damage Number of Dice and Damage Sides per Dice.<br/>
+<br/>
+The minimum damage is:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Base Damage + Damage Number of Dice</code></pre>
+</div>
+</div><br/>
+The maximum damage is:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Base Damage + Damage Number of Dice * Damage Sides per Dice</code></pre>
+</div>
+</div><br/>
+So if we now set the Base Damage to 3, the Damage Number of Dice to 5 and the Damage Sides per die to 4 you will get the values:<br/>
+Minimum Damage = 3 + 5 = 8<br/>
+Maximum Damage = 3 + 5 * 4 = 23<br/>
+So the unit will have the damage of 8 - 23<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Turning on Bounty</u></b></span><br/>
+Bounty is the gold you get from killing a unit. The bounty can as the damage vary, you can have a minimum bounty and a maximum bounty.<br/>
+<br/>
+The minimum bounty is:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Gold Bounty Awarded - Base + Gold Bounty Awarded - Number of Dice</code></pre>
+</div>
+</div><br/>
+The maximum bounty is:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Code:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang><code>Gold Bounty Awarded - Base + Gold Bounty Awarded - Number of Dice * Gold Bounty Awarded - Sides per Die</code></pre>
+</div>
+</div><br/>
+But if the unit you set the bounty on is not a normal creep, you will have to add a trigger too. Go to your Trigger Editor and create a new trigger:<br/>
+<ul class="bbcode-trigger" data-xf-init="trigger-tag">
+<li>
+<img src="/styles/default/ratory/trigger_legacy/base.gif" /><span>Bounty</span>
+<ul>
+<li>
+<img src="/styles/default/ratory/trigger_legacy/joinminus.gif" class="expander" data-alternative="/styles/default/ratory/trigger_legacy/joinplus.gif" /><img src="/styles/default/ratory/trigger_legacy/events.gif" /><span>Events</span>
+<ul>
+<li>
+<img src="/styles/default/ratory/trigger_legacy/line.gif" /><img src="/styles/default/ratory/trigger_legacy/joinbottom.gif" /><img src="/styles/default/ratory/trigger_legacy/folder.gif" /><span>Map Initialization</span>
+</li>
+</ul>
+</li>
+<li>
+<img src="/styles/default/ratory/trigger_legacy/join.gif" /><img src="/styles/default/ratory/trigger_legacy/cond.gif" /><span>Conditions</span>
+</li>
+<li>
+<img src="/styles/default/ratory/trigger_legacy/joinbottomminus.gif" class="expander" data-alternative="/styles/default/ratory/trigger_legacy/joinbottomplus.gif" /><img src="/styles/default/ratory/trigger_legacy/actions.gif" /><span>Actions</span>
+<ul>
+<li>
+<img src="/styles/default/ratory/trigger_legacy/empty.gif" /><img src="/styles/default/ratory/trigger_legacy/joinbottom.gif" /><img src="/styles/default/ratory/trigger_legacy/player.gif" /><span>Player - Turn Gives Bounty On for (Player 1 (red))</span>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><i>(You might have a hard time finding the 'Turn On Bounty' but it is called: 'Player Turn Player Flag On/Off')</i><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 12px"><b><u>How to rename Quests to Info and Bounty to Author</u></b></span><br/>
+When browsing around the hosted scenarios on battle.net you will find that some maps have renamed the button for 'Quests' to 'Info' or maybe changed the Food Limit popup in the top right corner to the name of the author. This is what I will be explaining.<br/>
+Click Advanced -&gt; Gameplay interface<br/>
+Tick &quot;Use Custom Gameplay Interface&quot;<br/>
+<br/>
+Then find the value you want to change. Here's a list of some of the often changed values:<br/>
+<blockquote data-attributes data-quote data-source class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+<div class="bbCodeBlock-content">
+<div class="bbCodeBlock-expandContent js-expandContent ">
+Text - General - 'Optional Quests'<br/>
+Text - General - 'Quests'<br/>
+Text - General - 'No Upkeep'<br/>
+Text - General - 'Low Upkeep'<br/>
+Text - General - 'High Upkeep'
+</div>
+<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+</div>
+</blockquote><br/>
+<br/>
+<a id="TOM"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">The Object Manager</span></b></span><br/>
+<br/>
+<a id="TIM"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">The Import Manager</span></b></span><br/>
+<br/>
+<span style="font-size: 12px"><b><u>WarCraft Files (w3m, w3x, mpq..)</u></b></span><br/>
+MPQ (MoPaQ) files are similar to zip-files. They are used for many of the popular Blizzard Games (Warcraft, Diablo, Starcraft). They contain many models, icons and other elements for these games. It's easy to open these files and extract their contents for use in the World Editor or in other software. <br/>
+Many programs exist to extract files from MPQ archives, among my favorites is <br/>
+<a href="http://hiveworkshop.com/resources_new/tools/5/" target="_blank" class="link link--external" rel="noopener">Warcraft III Image Extractor</a> it can not only access mpq files but also w3m files and w3x files which are the extensions of Warcraft maps, this allows you to extract your minimap image and various other images. <br/>
+<br/>
+<span style="font-size: 12px"><b><u>List Files</u></b></span><br/>
+A MPQ-file has a listfile to show all the contents of the MPQ-file. Here is the list of the content inside each of the different Warcraft MPQ-Files:<br/>
+<ul>
+<li data-xf-list-type="ul"><a href="http://hiveworkshop.com/gfx/posts/war3.txt" target="_blank" class="link link--external" rel="noopener"> war3.mpq - Standard Warcraft 3 (RoC)</a></li>
+<li data-xf-list-type="ul"><a href="http://hiveworkshop.com/gfx/posts/war3patch.txt" target="_blank" class="link link--external" rel="noopener"> war3patch.mpq - Patches</a> - </li>
+<li data-xf-list-type="ul"><a href="http://hiveworkshop.com/gfx/posts/war3xlocal.txt" target="_blank" class="link link--external" rel="noopener"> war3xlocal.mpq - Frozen Throne Local Files</a> - </li>
+<li data-xf-list-type="ul"><a href="http://hiveworkshop.com/gfx/posts/war3x.txt" target="_blank" class="link link--external" rel="noopener"> war3x.mpq - Frozen Throne Files</a> </li>
+</ul>For more detailed information about MPQ's see the following articles about this subject.<br/>
+<ul>
+<li data-xf-list-type="ul"><a href="http://www.blizzpub.net/forums/thread.php?tid=134" target="_blank" class="link link--external" rel="noopener">BlizzPubs Article</a></li>
+<li data-xf-list-type="ul"><a href="http://www.campaigncreations.org/starcraft/inside_mopaq/" target="_blank" class="link link--external" rel="noopener">Inside MoPaQ</a> </li>
+<li data-xf-list-type="ul"><a href="http://mr-nutz.no-ip.org/bioinfo/Valentin/content/projects/W3ZME/w3m-specs.html" target="_blank" class="link link--external" rel="noopener">W3M and W3X Files Format </a> </li>
+<li data-xf-list-type="ul"><a href="https://www.hiveworkshop.com/content/w3m-specs.html" class="link link--internal">A mirror of the above image <span style="color: Red">{PRESENTLY DOWN}</span></a></li>
+</ul><br/>
+<br/>
+<a id="TTE"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">The Terrain Editor</span></b></span><br/>
+<br/>
+<span style="font-size: 12px"><b><u>Select ALL objects</u></b></span><br/>
+CTRL + A selects all objects in Terrain Editor According to which palette you are using.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Selecting / deselecting objects</u></b></span><br/>
+Hit SPACE to select the last selected object and again to deselect it.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Quick move objects or regions</u></b></span><br/>
+Hold down ALT and click wherever you want to move the selected thing.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Changing doodads' height</u></b></span><br/>
+CTRL + PgUp for moving the doodad Up.<br/>
+CTRL + PgDn for moving the doodad Down.<br/>
+NOTE: this is very useful for placing bridges correctly.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Placing Objects without Collision-size</u></b></span><br/>
+Hold down the SHIFT key while placing doodads on the map. This method allows doodads to be placed very close together (or even on top of one another).<br/>
+<br/>
+<br/>
+<div class="bbTable">
+<table style="max-width: 100%"><tr><td><span style="font-size: 12px"><b><u>Basic Terraining Tutorial by Torn</u></b></span><b><a href="https://www.hiveworkshop.com/forums/showthread.php?t=18604" class="link link--internal"> source</a></b><br/>
+<b>Introduction</b><br/>
+So you've made a map, but its just not complete, it needs one more thing, terrain, terrain makes up most of the map, sure it can have great triggers, great skins and what not, but no one likes to play on a plain bare surface. So lets get started.<br/>
+<br/>
+<b>Step 1: The basic tileset.</b><br/>
+When you make terrain you should always be aware of what type of terrain you want the players to focus on mainly, rather it be grass, snow or dirt, it doesn't matter. But lets make ours a type of forest area. I made a 32x32 map with Lordaeron tileset. Go to the terrain palette and select the 'Grass' tile. Place the grass randomly around the basic area of your piece of terrain. It should now look something like this.<br/>
+<a href="https://www.hiveworkshop.com/attachments/weterrain01-jpg.4159/" target="_blank" class="js-lbImage" data-lb-sidebar-href data-lb-caption-extra-html><img src="https://www.hiveworkshop.com/data/attachments/2/2707-0ba82ccb1de15a242715a6eca7b2a531.jpg" class="bbImage " style alt="WEterrain01.jpg" title="WEterrain01.jpg" width="100" height="63" loading="lazy" /></a><br/>
+<br/>
+<b>Step 2: Blending Tilesets</b><br/>
+Sure, it looks horrible for the moment, but now we will have to blend tilesets. Select another tile from the terrain palette, lets use grassy dirt, fill in SOME of the gaps were there is dirt, don't fill in all the gaps. Now that we have blended those two tiles together its time to add one more tile, lets use dark grass. Fill in the remaining dirt spots with dark grass and it should turn out to look something like this...<br/>
+<a href="https://www.hiveworkshop.com/attachments/weterrain02-jpg.4160/" target="_blank" class="js-lbImage" data-lb-sidebar-href data-lb-caption-extra-html><img src="https://www.hiveworkshop.com/data/attachments/2/2708-26a09258b7d0be2ed1070cef6a5c93f7.jpg" class="bbImage " style alt="WEterrain02.jpg" title="WEterrain02.jpg" width="100" height="63" loading="lazy" /></a><br/>
+<br/>
+<b>Step 3: Water and Cliffs</b><br/>
+Now, you have a flat plain of land that looks decent, but you don't see that type of land when you go out walking do you? Let's fix it up some...Back to the terrain palette select the 'cliff' labeled shallow water and drag it diagonally downward to make a stream. You should now have a stream, but it is bare and it needs some doodads, so, go to the doodad palette and look under water. Lets put some fish in, one destroyed ship and some floating lily pads. You should now have a beautiful stream. Back to work, back to the doodad palette, go under the category labeled Bridges/Ramps, search for short natural bridge (diagonal 2) and lay it across your newly created stream. If the bridge doesn't seem to look quite right, left click on it and click Ctrl + Page up or Page down to raise and lower the bridge.<br/>
+Now your map should look like this...<br/>
+<a href="https://www.hiveworkshop.com/attachments/weterrain03-jpg.4161/" target="_blank" class="js-lbImage" data-lb-sidebar-href data-lb-caption-extra-html><img src="https://www.hiveworkshop.com/data/attachments/2/2709-edac9cd9ff79d03b9476b92963532031.jpg" class="bbImage " style alt="WEterrain03.jpg" title="WEterrain03.jpg" width="100" height="63" loading="lazy" /></a><br/>
+<br/>
+<b>Step 4: Trees and surroundings</b><br/>
+Your map is looking great already, but not great enough, go back to the Terrain palette and at the bottom of it apply height 'Raise'. Click on area of your map, around the bridge and such, do create small bumps in the terrain. Select the 'smooth' tool if they get too pointy. Now, back to the doodad palette. In the doodad palette go under Trees/Destructibles and select the Summer Tree Wall. Place trees around your desired area until it looks just as you would like it too, ours is supposed to be a variation of a forest. Your done, if you wish you can add custom doodads or tilesets which can be downloaded from this site, this is just a brief explanation of terraining, more doodads should be added such as: Barrels, Homes, Crates, Tents, Banners. It all depends on the setting.<br/>
+Lets look at the final product:<br/>
+<a href="https://www.hiveworkshop.com/attachments/weterrain04-jpg.4162/" target="_blank" class="js-lbImage" data-lb-sidebar-href data-lb-caption-extra-html><img src="https://www.hiveworkshop.com/data/attachments/2/2710-ee1ebb7bd9a50af75898dd3d30759cc4.jpg" class="bbImage " style alt="WEterrain04.jpg" title="WEterrain04.jpg" width="100" height="63" loading="lazy" /></a><br/>
+<b>Good luck with your terraining!</b></td></tr></table>
+</div><br/>
+<br/>
+<a id="TTG"></a><span style="font-size: 18px"><b><span style="color: RoyalBlue">The Trigger Editor</span></b></span><br/>
+<br/>
+<span style="font-size: 12px"><b><u>Remove starting units</u></b></span><br/>
+Remove the Action &quot;Meeée Game - Create starting units (for all players)&quot; from the trigger &quot;Melee Initialization&quot;.<br/>
+<br/>
+<span style="font-size: 12px"><b><u>Remove starting resources</u></b></span><br/>
+Remove the Action &quot;Melee Game - Set starting resources (for all players)&quot; from the trigger &quot;Melee Initialization&quot;.<br/>
+<br/>
+<a id="TSE"></a><b><span style="font-size: 18px"><span style="color: RoyalBlue">The Sound Editor</span></span></b><br/>
+<br/>
+<b><span style="font-size: 12px"><u>Soundsets</u></span></b><br/>
+A soundset is the &quot;vocabulary&quot; of a unit. Units have a varying amount of specific voices in their &quot;vocabularies&quot; that you cannot change. However you can replace the voices in a unit's vocabulary.<br/>
+This also means that you can't create a new soundset or extend the chosen soundset. So you have to find a soundset that you are not using and which also fits your amount of voices. As an example I will use the Footman's soundset.<br/>
+<br/>
+The Footman's soundset is located in Sounds/Internal/Units/Human/Footman/ and contains the following sounds/voices:<br/>
+<ul>
+<li data-xf-list-type="ul">FootmanDeath.wav</li>
+<li data-xf-list-type="ul">FootmanPissed1.wav</li>
+<li data-xf-list-type="ul">FootmanPissed2.wav</li>
+<li data-xf-list-type="ul">FootmanPissed3.wav</li>
+<li data-xf-list-type="ul">FootmanPissed4.wav</li>
+<li data-xf-list-type="ul">FootmanReady1.wav</li>
+<li data-xf-list-type="ul">FootmanWarcry1.wav</li>
+<li data-xf-list-type="ul">FootmanWhat1.wav</li>
+<li data-xf-list-type="ul">FootmanWhat2.wav</li>
+<li data-xf-list-type="ul">FootmanWhat3.wav</li>
+<li data-xf-list-type="ul">FootmanWhat4.wav</li>
+<li data-xf-list-type="ul">FootmanYes1.wav</li>
+<li data-xf-list-type="ul">FootmanYes2.wav</li>
+<li data-xf-list-type="ul">FootmanYes3.wav</li>
+<li data-xf-list-type="ul">FootmanYes4.wav</li>
+<li data-xf-list-type="ul">FootmanYesAttack1.wav</li>
+<li data-xf-list-type="ul">FootmanYesAttack2.wav</li>
+<li data-xf-list-type="ul">FootmanYesAttack3.wav</li>
+</ul>It's easy to replace all the existing sounds with new ones.<br/>
+<br/>
+<b>Importing &amp; Replacing</b><br/>
+For each file of the footman's soundset you right-click and choose: <b>Replace Internal Sound</b> Then locate your own recorded sound.<br/>
+<br/>
+Done, You should now have made.. I mean replaced an entire soundset.<br/>
+<br/>
+<a href="javascript:;" onclick="window.location.hash = '#' + $(this).data('hash')" data-hash="CON">Contents</a><br/>
+<br/>
+<a href="http://www.forums.hiveworkshop.com/showthread.php?t=5899" target="_blank" class="link link--external" rel="noopener">http://www.forums.hiveworkshop.com/showthread.php?t=5899</a></div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+<div class="message-lastEdit">
+Last edited by a moderator: <time class="u-dt" dir="auto" datetime="2009-11-02T18:34:28+0000" data-time="1257186868" data-date-string="Nov 2, 2009" data-time-string="6:34 PM" title="Nov 2, 2009 at 6:34 PM" itemprop="dateModified">Nov 2, 2009</time>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList is-active">
+<ul class="reactionSummary">
+<li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="/data/assets/reactions/like.png" srcset="/data/assets/reactions/like2x.png 2x" class="reaction-image js-reaction" alt="Like" title="Like" /></span></li>
+</ul>
+<span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="/posts/68938/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>Cokemonkey11</bdi>, <bdi>SadOnix</bdi>, <bdi>Mobinfallah</bdi> and 10 others</a>
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<div class="block-outer block-outer--after">
+<dl class="blockStatus">
+<dt>Status</dt>
+<dd class="blockStatus-message blockStatus-message--locked">
+Not open for further replies.
+</dd>
+</dl>
+</div>
+</div>
+<div class="block" data-widget-id="11" data-widget-key="xfes_thread_view_below_quick_reply_similar_threads" data-widget-definition="xfes_similar_threads">
+<div class="block-container">
+<h3 class="block-header">Similar threads</h3>
+<div class="block-body">
+<div class="structItemContainer">
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-5899" data-author="Ralle">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/ralle.1/" class="avatar avatar--s" data-user-id="1" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/0/1.jpg?1467385793" srcset="/data/avatars/m/0/1.jpg?1467385793 2x" alt="Ralle" class="avatar-u1-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/world-editor-tips.5899/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/world-editor-tips.5899/preview">World Editor Tips</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/ralle.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin ">Ralle</span></a></li>
+<li class="structItem-startDate"><a href="/threads/world-editor-tips.5899/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2006-01-03T16:45:08+0000" data-time="1136306708" data-date-string="Jan 3, 2006" data-time-string="4:45 PM" title="Jan 3, 2006 at 4:45 PM">Jan 3, 2006</time></a></li>
+<li><a href="/forums/misc-general-mapping-tutorials.278/">Misc/General Mapping Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 11">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>25</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>50K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/world-editor-tips.5899/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-12-31T17:05:22+0000" data-time="1420045522" data-date-string="Dec 31, 2014" data-time-string="5:05 PM" title="Dec 31, 2014 at 5:05 PM">Dec 31, 2014</time></a>
+<div class="structItem-minor">
+<a href="/members/dark_fuse.242782/" class="username " dir="auto" data-user-id="242782" data-xf-init="member-tooltip"><span class=" ">Dark_Fuse</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/dark_fuse.242782/" class="avatar avatar--xxs" data-user-id="242782" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/242/242782.jpg?1465513231" alt="Dark_Fuse" class="avatar-u242782-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-124461" data-author="Septimus">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/septimus.148027/" class="avatar avatar--s" data-user-id="148027" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/148/148027.jpg?1465506458" alt="Septimus" class="avatar-u148027-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/how-to-use-the-campaign-editor.124461/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/how-to-use-the-campaign-editor.124461/preview">How to use the campaign editor</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/septimus.148027/" class="username " dir="auto" data-user-id="148027" data-xf-init="member-tooltip"><span class=" ">Septimus</span></a></li>
+<li class="structItem-startDate"><a href="/threads/how-to-use-the-campaign-editor.124461/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2009-04-18T13:01:29+0100" data-time="1240056089" data-date-string="Apr 18, 2009" data-time-string="1:01 PM" title="Apr 18, 2009 at 1:01 PM">Apr 18, 2009</time></a></li>
+<li><a href="/forums/misc-general-mapping-tutorials.278/">Misc/General Mapping Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 7">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>21</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>30K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/how-to-use-the-campaign-editor.124461/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2014-07-04T03:03:11+0100" data-time="1404439391" data-date-string="Jul 4, 2014" data-time-string="3:03 AM" title="Jul 4, 2014 at 3:03 AM">Jul 4, 2014</time></a>
+<div class="structItem-minor">
+<a href="/members/purgeandfire.132502/" class="username " dir="auto" data-user-id="132502" data-xf-init="member-tooltip"><span class=" ">PurgeandFire</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/purgeandfire.132502/" class="avatar avatar--xxs" data-user-id="132502" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/132/132502.jpg?1467373858" alt="PurgeandFire" class="avatar-u132502-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-39960" data-author="Ralle">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/ralle.1/" class="avatar avatar--s" data-user-id="1" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/0/1.jpg?1467385793" srcset="/data/avatars/m/0/1.jpg?1467385793 2x" alt="Ralle" class="avatar-u1-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<ul class="structItem-statuses">
+<li>
+<i class="structItem-status structItem-status--locked" aria-hidden="true" title="Locked"></i>
+<span class="u-srOnly">Locked</span>
+</li>
+</ul>
+<div class="structItem-title">
+<a href="/threads/world-editor-basics.39960/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/world-editor-basics.39960/preview">World Editor Basics</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/ralle.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin ">Ralle</span></a></li>
+<li class="structItem-startDate"><a href="/threads/world-editor-basics.39960/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2006-10-26T16:57:53+0100" data-time="1161878273" data-date-string="Oct 26, 2006" data-time-string="4:57 PM" title="Oct 26, 2006 at 4:57 PM">Oct 26, 2006</time></a></li>
+<li><a href="/forums/world-editor-help-zone.98/">World Editor Help Zone</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>0</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>8K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/world-editor-basics.39960/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2006-10-26T16:57:53+0100" data-time="1161878273" data-date-string="Oct 26, 2006" data-time-string="4:57 PM" title="Oct 26, 2006 at 4:57 PM">Oct 26, 2006</time></a>
+<div class="structItem-minor">
+<a href="/members/ralle.1/" class="username " dir="auto" data-user-id="1" data-xf-init="member-tooltip"><span class="username--staff username--moderator username--admin ">Ralle</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/ralle.1/" class="avatar avatar--xxs" data-user-id="1" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/0/1.jpg?1467385793" alt="Ralle" class="avatar-u1-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-21724" data-author="Rui">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/rui.116531/" class="avatar avatar--s" data-user-id="116531" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/116/116531.jpg?1469701295" srcset="/data/avatars/m/116/116531.jpg?1469701295 2x" alt="Rui" class="avatar-u116531-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/map-faq.21724/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/map-faq.21724/preview">Map FAQ</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/rui.116531/" class="username " dir="auto" data-user-id="116531" data-xf-init="member-tooltip"><span class=" ">Rui</span></a></li>
+<li class="structItem-startDate"><a href="/threads/map-faq.21724/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2005-11-12T13:14:39+0000" data-time="1131801279" data-date-string="Nov 12, 2005" data-time-string="1:14 PM" title="Nov 12, 2005 at 1:14 PM">Nov 12, 2005</time></a></li>
+<li><a href="/forums/tutorial-archive.209/">Tutorial Archive</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 0">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>0</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>2K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/map-faq.21724/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2005-11-12T13:14:39+0000" data-time="1131801279" data-date-string="Nov 12, 2005" data-time-string="1:14 PM" title="Nov 12, 2005 at 1:14 PM">Nov 12, 2005</time></a>
+<div class="structItem-minor">
+<a href="/members/rui.116531/" class="username " dir="auto" data-user-id="116531" data-xf-init="member-tooltip"><span class=" ">Rui</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/rui.116531/" class="avatar avatar--xxs" data-user-id="116531" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/116/116531.jpg?1469701295" alt="Rui" class="avatar-u116531-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-8204" data-author="oz02">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/oz02.109727/" class="avatar avatar--s" data-user-id="109727" data-xf-init="member-tooltip">
+<img src="https://www.hiveworkshop.com/styles/default/vindit-avatars/unspecified48.jpg" srcset="https://www.hiveworkshop.com/styles/default/vindit-avatars/unspecified96.jpg 2x" alt="oz02" class="avatar-u109727-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/a-beginners-guide-to-map-making.8204/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/a-beginners-guide-to-map-making.8204/preview">A Beginner&#039;s Guide to Map Making</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/oz02.109727/" class="username " dir="auto" data-user-id="109727" data-xf-init="member-tooltip"><span class=" ">oz02</span></a></li>
+<li class="structItem-startDate"><a href="/threads/a-beginners-guide-to-map-making.8204/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2004-06-07T20:21:59+0100" data-time="1086636119" data-date-string="Jun 7, 2004" data-time-string="8:21 PM" title="Jun 7, 2004 at 8:21 PM">Jun 7, 2004</time></a></li>
+<li><a href="/forums/misc-general-mapping-tutorials.278/">Misc/General Mapping Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 12">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>24</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>145K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/a-beginners-guide-to-map-making.8204/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2019-12-01T19:55:54+0000" data-time="1575230154" data-date-string="Dec 1, 2019" data-time-string="7:55 PM" title="Dec 1, 2019 at 7:55 PM">Dec 1, 2019</time></a>
+<div class="structItem-minor">
+<a href="/members/fabi%C3%A1n-montero.278694/" class="username " dir="auto" data-user-id="278694" data-xf-init="member-tooltip"><span class=" ">Fabián Montero</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/fabi%C3%A1n-montero.278694/" class="avatar avatar--xxs" data-user-id="278694" data-xf-init="member-tooltip">
+<img src="https://www.hiveworkshop.com/styles/default/vindit-avatars/male48.jpg" alt="Fabián Montero" class="avatar-u278694-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blockMessage blockMessage--none">
+<div class="shareButtons shareButtons--iconic" data-xf-init="share-buttons" data-page-url data-page-title data-page-desc data-page-image>
+<span class="shareButtons-label">Share:</span>
+<div class="shareButtons-buttons">
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--reddit" data-href="https://reddit.com/submit?url={url}&amp;title={title}">
+<i aria-hidden="true"></i>
+<span>Reddit</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--pinterest" data-href="https://pinterest.com/pin/create/bookmarklet/?url={url}&amp;description={title}&amp;media={image}">
+<i aria-hidden="true"></i>
+<span>Pinterest</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--tumblr" data-href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&amp;title={title}">
+<i aria-hidden="true"></i>
+<span>Tumblr</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--whatsApp" data-href="https://api.whatsapp.com/send?text={title}&nbsp;{url}">
+<i aria-hidden="true"></i>
+<span>WhatsApp</span>
+</a>
+<a class="shareButtons-button shareButtons-button--email" data-href="mailto:?subject={title}&amp;body={url}">
+<i aria-hidden="true"></i>
+<span>Email</span>
+</a>
+<a class="shareButtons-button shareButtons-button--share is-hidden" data-xf-init="web-share" data-title data-text data-url data-hide=".shareButtons-button:not(.shareButtons-button--share)">
+<i aria-hidden="true"></i>
+<span>Share</span>
+</a>
+<a class="shareButtons-button shareButtons-button--link is-hidden" data-clipboard="{url}">
+<i aria-hidden="true"></i>
+<span>Link</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="https://www.hiveworkshop.com" itemprop="item">
+<span itemprop="name">Home</span>
+</a>
+<meta itemprop="position" content="1" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/" itemprop="item">
+<span itemprop="name">Forums</span>
+</a>
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/#warcraft-iii.255" itemprop="item">
+<span itemprop="name">Warcraft III</span>
+</a>
+<meta itemprop="position" content="3" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/warcraft-3-tutorials.206/" itemprop="item">
+<span itemprop="name">Warcraft 3 Tutorials</span>
+</a>
+<meta itemprop="position" content="4" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/misc-general-mapping-tutorials.278/" itemprop="item">
+<span itemprop="name">Misc/General Mapping Tutorials</span>
+</a>
+<meta itemprop="position" content="5" />
+</li>
+</ul>
+</div>
+</div>
+<footer class="p-footer" id="footer">
+<div class="p-footer-inner">
+<div class="p-footer-row">
+<div class="p-footer-row-main">
+<ul class="p-footer-linkList">
+<li><a href="/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+<i class="fa--xf far fa-paint-brush" aria-hidden="true"></i> Reforged
+</a></li>
+</ul>
+</div>
+<div class="p-footer-row-opposite">
+<ul class="p-footer-linkList">
+<li><a href="/misc/contact" data-xf-click="overlay">Contact us</a></li>
+<li><a href="/help/terms/">Terms and rules</a></li>
+<li><a href="/help/privacy-policy/">Privacy policy</a></li>
+<li><a href="/help/">Help</a></li>
+<li><a href="https://www.hiveworkshop.com">Home</a></li>
+<li><a href="/forums/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss" aria-hidden="true"></i><span class="u-srOnly">RSS</span></span></a></li>
+</ul>
+</div>
+</div>
+<div class="p-footer-copyright">
+<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>&reg;</sup> <span class="copyright">&copy; 2010-2023 XenForo Ltd.</span></a>
+<div style="text-align:center;"><a href="https://xf2seo.com/" target="_blank" class="u-concealed external">XenForo SEO Add-on by XF2SEO</a></div>
+<div class="rio-copyright">
+<a href="https://xenforo.com/community/resources/6024/" target="_blank">XenRio 2 PRO</a> &copy; Jason Axelrod of
+<a href="https://8wayrun.com/" target="_blank">8WAYRUN</a>
+</div>
+</div>
+</div>
+</footer>
+</div> 
+<div class="u-bottomFixer js-bottomFixTarget">
+<ul class="notices notices--bottom_fixer  js-notices" data-xf-init="notices" data-type="bottom_fixer" data-scroll-interval="6">
+<li class="notice js-notice notice--primary notice--cookie" data-notice-id="-1" data-delay-duration="0" data-display-duration="0" data-auto-dismiss="0" data-visibility>
+<div class="notice-content">
+<div class="u-alignCenter">
+This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register.<br/>
+By continuing to use this site, you are consenting to our use of cookies.
+</div>
+<div class="u-inputSpacer u-alignCenter">
+<a href="/account/dismiss-notice" class="js-noticeDismiss button--notice button button--icon button--icon--confirm"><span class="button-text">Accept</span></a>
+<a href="/help/cookies" class="button--notice button"><span class="button-text">Learn more…</span></a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="u-scrollButtons js-scrollButtons" data-trigger-type="up">
+<a href="#top" class="button--scroll button" data-xf-click="scroll-to"><span class="button-text"><i class="fa--xf far fa-arrow-up" aria-hidden="true"></i><span class="u-srOnly">Top</span></span></a>
+</div>
+<script src="/js/vendor/jquery/jquery-3.5.1.min.js?_v=b6041806"></script>
+<script src="/js/vendor/vendor-compiled.js?_v=b6041806"></script>
+<script src="/js/xf/core-compiled.js?_v=b6041806"></script>
+<script src="/js/xf/lightbox-compiled.js?_v=b6041806"></script>
+<script src="/js/xf/code_block-compiled.js?_v=b6041806"></script>
+<script src="/js/vindit-bbcode/prism.jass.min.js?_v=b6041806"></script>
+<script src="/js/vindit-bbcode/prism.wurst.min.js?v1&amp;_v=b6041806"></script>
+<script src="/js/repository/trigger.js?_v=b6041806"></script>
+<script src="/js/vindit-rotator/rotator.js?v3&amp;_v=b6041806"></script>
+<script src="/js/xf/notice.min.js?_v=b6041806"></script>
+<script src="/js/xf/carousel-compiled.js?_v=b6041806"></script>
+<script>
+		jQuery.extend(true, XF.config, {
+			// 
+			userId: 0,
+			enablePush: true,
+			pushAppServerKey: 'BCy6YIwV2vLKzpiyj5h_GcbS0klHu8vmc6DmNW5Gd3n6Dc330mbJjF_iAF2i4a0VkP5q0rA6m9jPsBHjVgYBZoY',
+			url: {
+				fullBase: 'https://www.hiveworkshop.com/',
+				basePath: '/',
+				css: '/css.php?css=__SENTINEL__&s=7&l=1&d=1708462169',
+				keepAlive: '/login/keep-alive'
+			},
+			cookie: {
+				path: '/',
+				domain: '',
+				prefix: 'xf_',
+				secure: true,
+				consentMode: 'simple',
+				consented: ["optional","_third_party"]
+			},
+			cacheKey: '6dfc183557a486c9692dfa7afd77889a',
+			csrf: '1711482226,b7edb609c216258bae37807f267a0fe8',
+			js: {"\/js\/xf\/lightbox-compiled.js?_v=b6041806":true,"\/js\/xf\/code_block-compiled.js?_v=b6041806":true,"\/js\/vindit-bbcode\/prism.jass.min.js?_v=b6041806":true,"\/js\/vindit-bbcode\/prism.wurst.min.js?v1&_v=b6041806":true,"\/js\/repository\/trigger.js?_v=b6041806":true,"\/js\/vindit-rotator\/rotator.js?v3&_v=b6041806":true,"\/js\/xf\/notice.min.js?_v=b6041806":true,"\/js\/xf\/carousel-compiled.js?_v=b6041806":true},
+			css: {"public:bb_code.less":true,"public:bb_code_jass.less":true,"public:bb_code_tag_box.less":true,"public:bb_code_tag_trigger.less":true,"public:experience_bar.less":true,"public:lightbox.less":true,"public:lightslider.less":true,"public:medals.less":true,"public:message.less":true,"public:notices.less":true,"public:ratory_message_resource_counts.less":true,"public:share_controls.less":true,"public:structured_list.less":true,"public:vindit_features.less":true,"public:vindit_rotator_ads.less":true,"public:vindit_sign_up_upgrade.less":true,"public:extra.less":true},
+			time: {
+				now: 1711482226,
+				today: 1711411200,
+				todayDow: 2,
+				tomorrow: 1711497600,
+				yesterday: 1711324800,
+				week: 1710892800
+			},
+			borderSizeFeature: '3px',
+			fontAwesomeWeight: 'r',
+			enableRtnProtect: true,
+			
+			enableFormSubmitSticky: true,
+			uploadMaxFilesize: 3221225472,
+			allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+			allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+			shortcodeToEmoji: true,
+			visitorCounts: {
+				conversations_unread: '0',
+				alerts_unviewed: '0',
+				total_unread: '0',
+				title_count: true,
+				icon_indicator: true
+			},
+			jsState: {},
+			publicMetadataLogoUrl: '/data/styles/7/styles/vindit-reforged/512.logo.og.png',
+			publicPushBadgeUrl: 'https://www.hiveworkshop.com/styles/default/xenforo/bell.png'
+		});
+
+		jQuery.extend(XF.phrases, {
+			// 
+			date_x_at_time_y: "{date} at {time}",
+			day_x_at_time_y:  "{day} at {time}",
+			yesterday_at_x:   "Yesterday at {time}",
+			x_minutes_ago:    "{minutes} minutes ago",
+			one_minute_ago:   "1 minute ago",
+			a_moment_ago:     "A moment ago",
+			today_at_x:       "Today at {time}",
+			in_a_moment:      "In a moment",
+			in_a_minute:      "In a minute",
+			in_x_minutes:     "In {minutes} minutes",
+			later_today_at_x: "Later today at {time}",
+			tomorrow_at_x:    "Tomorrow at {time}",
+
+			day0: "Sunday",
+			day1: "Monday",
+			day2: "Tuesday",
+			day3: "Wednesday",
+			day4: "Thursday",
+			day5: "Friday",
+			day6: "Saturday",
+
+			dayShort0: "Sun",
+			dayShort1: "Mon",
+			dayShort2: "Tue",
+			dayShort3: "Wed",
+			dayShort4: "Thu",
+			dayShort5: "Fri",
+			dayShort6: "Sat",
+
+			month0: "January",
+			month1: "February",
+			month2: "March",
+			month3: "April",
+			month4: "May",
+			month5: "June",
+			month6: "July",
+			month7: "August",
+			month8: "September",
+			month9: "October",
+			month10: "November",
+			month11: "December",
+
+			active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+			server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+			oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+			oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+			file_too_large_to_upload: "The file is too large to be uploaded.",
+			uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+			files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+			attach: "Attach files",
+			rich_text_box: "Rich text box",
+			close: "Close",
+			link_copied_to_clipboard: "Link copied to clipboard.",
+			text_copied_to_clipboard: "Text copied to clipboard.",
+			loading: "Loading…",
+			you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+			processing: "Processing",
+			'processing...': "Processing…",
+
+			showing_x_of_y_items: "Showing {count} of {total} items",
+			showing_all_items: "Showing all items",
+			no_items_to_display: "No items to display",
+
+			number_button_up: "Increase",
+			number_button_down: "Decrease",
+
+			push_enable_notification_title: "Push notifications enabled successfully at HIVE",
+			push_enable_notification_body: "Thank you for enabling push notifications!",
+
+			pull_down_to_refresh: "Pull down to refresh",
+			release_to_refresh: "Release to refresh",
+			refreshing: "Refreshing…"
+		,
+			"svStandardLib_time.day": "{count} day",
+			"svStandardLib_time.days": "{count} days",
+			"svStandardLib_time.hour": "{count} hour",
+			"svStandardLib_time.hours": "{count} hours",
+			"svStandardLib_time.minute": "{count} minutes",
+			"svStandardLib_time.minutes": "{count} minutes",
+			"svStandardLib_time.month": "{count} month",
+			"svStandardLib_time.months": "{count} months",
+			"svStandardLib_time.second": "{count} second",
+			"svStandardLib_time.seconds": "{count} seconds",
+			"svStandardLib_time.week": "time.week",
+			"svStandardLib_time.weeks": "{count} weeks",
+			"svStandardLib_time.year": "{count} year",
+			"svStandardLib_time.years": "{count} years"
+
+		});
+	</script>
+<form style="display:none" hidden="hidden">
+<input type="text" name="_xfClientLoadTime" value id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1" />
+</form>
+<script type="application/ld+json">
+				{
+    "@context": "https://schema.org",
+    "@type": "DiscussionForumPosting",
+    "@id": "https://www.hiveworkshop.com/threads/world-editor-faq-work-in-progress.7239/",
+    "headline": "World Editor FAQ - Work in Progress",
+    "keywords": "",
+    "articleBody": "CONWorld Editor Basics\nThe Object Editor\nThe Object Manager\nThe Import Manager\nThe Terrain Editor\nThe Trigger Editor\nThe Sound Editor\n\nIntroduction\nThis FAQ is a collection of several frequently asked questions and short tutorials about...",
+    "articleSection": "Misc/General Mapping Tutorials",
+    "author": {
+        "@type": "Person",
+        "@id": "https://www.hiveworkshop.com/members/ralle.1/",
+        "name": "Ralle",
+        "url": "https://www.hiveworkshop.com/members/ralle.1/"
+    },
+    "datePublished": "2006-10-26T15:57:53+00:00",
+    "dateModified": "2006-10-26T15:57:53+00:00",
+    "image": "https://www.hiveworkshop.com/data/avatars/l/0/1.jpg?1467385793",
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/CommentAction",
+        "userInteractionCount": 0
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "HIVE",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/data/styles/7/styles/vindit-reforged/512.logo.og.png"
+        }
+    }
+}
+			</script>
+</body>
+</html>

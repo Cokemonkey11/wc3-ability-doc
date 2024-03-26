@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html id="XF" lang="en-US" dir="LTR" data-app="public" data-template="thread_view" data-container-key="node-280" data-content-key="thread-327849" data-logged-in="false" data-cookie-prefix="xf_" data-csrf="1711485143,ff17af2927e1fcb4a9b5907d26ba8331" class="has-no-js template-thread_view">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UI: Save&amp;Load Frames | HIVE</title>
+<link rel="manifest" href="/webmanifest.php">
+<meta name="apple-mobile-web-app-title" content="HIVE">
+<link rel="apple-touch-icon" href="/data/styles/7/styles/vindit-reforged/logo.og.png">
+<meta name="description" content="Introduction
+Currently none of the versions of warcraft 3 that have access to the UI-Frame natives do probably Save&amp;Load the usage of Frames/TOC (this was..." />
+<meta property="og:description" content="Introduction
+Currently none of the versions of warcraft 3 that have access to the UI-Frame natives do probably Save&amp;Load the usage of Frames/TOC (this was written when 1.32.8 /1.32.9 PTR were the current Versions).
+
+This broken Save&amp;Load stops Frames from being recreaterd/modified when the Game..." />
+<meta property="twitter:description" content="Introduction
+Currently none of the versions of warcraft 3 that have access to the UI-Frame natives do probably Save&amp;Load the usage of Frames/TOC (this was written when 1.32.8 /1.32.9 PTR were the..." />
+<meta property="og:url" content="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<link rel="canonical" href="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<meta property="og:site_name" content="HIVE" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="UI: Save&amp;Load Frames" />
+<meta property="twitter:title" content="UI: Save&amp;Load Frames" />
+<meta property="og:image" content="/data/styles/7/styles/vindit-reforged/512.logo.og.png" />
+<meta property="twitter:image" content="/data/styles/7/styles/vindit-reforged/512.logo.og.png" />
+<meta property="twitter:card" content="summary" />
+<link rel="preload" href="/styles/fonts/fa/fa-regular-400.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/styles/fonts/fa/fa-solid-900.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="preload" href="/styles/fonts/fa/fa-brands-400.woff2?_v=5.15.3" as="font" type="font/woff2" crossorigin="anonymous" />
+<link rel="stylesheet" href="/css.php?css=public%3Anormalize.css%2Cpublic%3Afa.css%2Cpublic%3Acore.less%2Cpublic%3Aapp.less&amp;s=7&amp;l=1&amp;d=1708462169&amp;k=5a0dd16dc0243c44c317da80b859f3a9a28f7189" />
+<link rel="stylesheet" href="/css.php?css=public%3Aattachments.less%2Cpublic%3Abb_code.less%2Cpublic%3Abb_code_jass.less%2Cpublic%3Abb_code_tag_tabs.less%2Cpublic%3Aexperience_bar.less%2Cpublic%3Alightslider.less%2Cpublic%3Amedals.less%2Cpublic%3Amessage.less%2Cpublic%3Anotices.less%2Cpublic%3Aratory_message_resource_counts.less%2Cpublic%3Ashare_controls.less%2Cpublic%3Astructured_list.less%2Cpublic%3Avindit_features.less%2Cpublic%3Avindit_rotator_ads.less%2Cpublic%3Avindit_sign_up_upgrade.less%2Cpublic%3Aextra.less&amp;s=7&amp;l=1&amp;d=1708462169&amp;k=f3bb0b5387371f4bae9fc47213ca89f21fbd2f80" />
+<script src="/js/xf/preamble.min.js?_v=b6041806"></script>
+<link rel="icon" type="image/png" href="/data/styles/7/styles/vindit-reforged/favicon.png" sizes="32x32" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2235457-1"></script>
+<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-2235457-1', {
+			// 
+			
+			
+				'anonymize_ip': true,
+			
+		});
+	</script>
+</head>
+<body data-template="thread_view">
+<div class="p-pageWrapper" id="top">
+<div class="p-navSticky p-navSticky--primary" data-xf-init="sticky-header">
+<nav class="p-nav">
+<div class="p-nav-inner">
+<a class="p-nav-menuTrigger" data-xf-click="off-canvas" data-menu=".js-headerOffCanvasMenu" role="button" tabindex="0">
+<i aria-hidden="true"></i>
+<span class="p-nav-menuText">Menu</span>
+</a>
+<div class="p-nav-smallLogo">
+<a href="https://www.hiveworkshop.com">
+<img src="/data/styles/7/styles/vindit-reforged/hive-logo.png" srcset alt="HIVE" width="250" height="156" />
+</a>
+</div>
+<div class="p-nav-scroller hScroller" data-xf-init="h-scroller" data-auto-scroll=".p-navEl.is-selected">
+<div class="hScroller-scroll">
+<ul class="p-nav-list js-offCanvasNavSource">
+<li>
+<div class="p-navEl ">
+<a href="https://www.hiveworkshop.com" class="p-navEl-link " data-xf-key="1" data-nav-id="home">Home</a>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a data-xf-key="2" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-linkHolder" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+<span class="p-navEl-link p-navEl-link--menuTrigger " data-nav-id="mapsAndResources">Maps & Resources</span>
+</a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/repositories/warcraft-3-custom-maps.564/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="maps">Maps</a>
+<a href="/repositories/warcraft-3-custom-models.530/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="models">Models</a>
+<a href="/repositories/warcraft-3-custom-skins.552/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="skins">Skins</a>
+<a href="/repositories/warcraft-3-custom-icons.541/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="icons">Icons</a>
+<a href="/repositories/spells.569/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="spells">Spells</a>
+<a href="/repositories/tools.560/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="tools">Tools</a>
+<a href="/forums/code.718/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="code">Code</a>
+<a href="/repositories/sounds.783/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="sounds">Sounds</a>
+<a href="/repositories/packs.542/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="packs">Packs</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/forums/warcraft-3-tutorials.206/" class="p-navEl-link " data-xf-key="3" data-nav-id="tutorials">Tutorials</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/forums/rules-information.710/" class="p-navEl-link " data-xf-key="4" data-nav-id="rulesAndInfo">Rules &amp; Information</a>
+</div>
+</li>
+<li>
+<div class="p-navEl is-selected" data-has-children="true">
+<a href="/forums/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="forums">Forums</a>
+<a data-xf-key="5" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="newPosts">New posts</a>
+<a href="/search/?type=post" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="searchForums">Search forums</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/pastebin/" class="p-navEl-link " data-xf-key="6" data-nav-id="pastebin">Pastebin</a>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/streams/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="EWRrio">Streams</a>
+<a data-xf-key="7" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/streams/multi/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-xf-init="rio-multi-popout" data-nav-id="EWRrioMulti">Multi-Viewer</a>
+<a href="/streams/games/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="EWRrioGames">Games</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/whats-new/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="whatsNew">What's new</a>
+<a data-xf-key="8" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="whatsNewPosts">New posts</a>
+<a href="/whats-new/media/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgWhatsNewNewMedia">New media</a>
+<a href="/whats-new/media-comments/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgWhatsNewMediaComments">New media comments</a>
+<a href="/whats-new/profile-posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="whatsNewProfilePosts">New profile posts</a>
+<a href="/whats-new/latest-activity" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="latestActivity">Latest activity</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/media/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="xfmg">Media</a>
+<a data-xf-key="9" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/whats-new/media/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgNewMedia">New media</a>
+<a href="/whats-new/media-comments/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="xfmgNewComments">New comments</a>
+<a href="/search/?type=xfmg_media" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="xfmgSearchMedia">Search media</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl " data-has-children="true">
+<a href="/members/" class="p-navEl-link p-navEl-link--splitMenu " data-nav-id="members">Members</a>
+<a data-xf-key="10" data-xf-click="menu" data-menu-pos-ref="< .p-navEl" class="p-navEl-splitTrigger" role="button" tabindex="0" aria-label="Toggle expanded" aria-expanded="false" aria-haspopup="true"></a>
+<div class="menu menu--structural" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<a href="/online/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="currentVisitors">Current visitors</a>
+<a href="/whats-new/profile-posts/" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " rel="nofollow" data-nav-id="newProfilePosts">New profile posts</a>
+<a href="/search/?type=profile_post" class="menu-linkRow u-indentDepth0 js-offCanvasCopy " data-nav-id="searchProfilePosts">Search profile posts</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/asset-scanner/" class="p-navEl-link " data-xf-key="11" data-nav-id="vinditDownloadsAssetScanner">Asset scanner</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/icon-borderiser/" class="p-navEl-link " data-xf-key="12" data-nav-id="vinditDownloadsIconBorderiser">Icon borderiser</a>
+</div>
+</li>
+<li>
+<div class="p-navEl ">
+<a href="/bbcode-migrater/" class="p-navEl-link " data-xf-key="13" data-nav-id="bbCodeMigrater">Hive 2 BB code migrator</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="vindit-feature-buttons-wrap">
+<div class="vindit-feature-buttons" data-xf-init="vindit-feature-buttons">
+<div class="just-to-get-right-width"></div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Community badgeContainer " data-badge></a>
+<a href class="vf-label">Community</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/forums" class="vf-icon dd vf-icon-CForums badgeContainer " title="Forums" data-badge></a>
+<a href="/forums" class="child-label">Forums</a>
+</div>
+<div class="child">
+<a href="/whats-new" class="vf-icon dd vf-icon-CWhatsNew badgeContainer " title="What&#039;s New" data-badge></a>
+<a href="/whats-new" class="child-label">What&#039;s New</a>
+</div>
+<div class="child">
+<a href="/watched/threads" class="vf-icon dd vf-icon-CWatched badgeContainer " title="Watched" data-badge></a>
+<a href="/watched/threads" class="child-label">Watched</a>
+</div>
+<div class="child">
+<a href="https://discord.hiveworkshop.com/" class="vf-icon dd vf-icon-CDiscord badgeContainer " title="Discord" data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="child-label">Discord</a>
+</div>
+<div class="child">
+<a href="/streams" class="vf-icon dd vf-icon-CStreams badgeContainer badgeContainer--highlighted" title="Streams" data-badge="1"></a>
+<a href="/streams" class="child-label">Streams</a>
+</div>
+<div class="child">
+<a href="/members" class="vf-icon dd vf-icon-CMembers badgeContainer " title="Members" data-badge></a>
+<a href="/members" class="child-label">Members</a>
+</div>
+<div class="child">
+<a href="/members/?key=staff_members" class="vf-icon dd vf-icon-CStaff badgeContainer " title="Staff" data-badge></a>
+<a href="/members/?key=staff_members" class="child-label">Staff</a>
+</div>
+<div class="child">
+<a href="/threads/contact-us.220922/" class="vf-icon dd vf-icon-CContact badgeContainer " title="Contact" data-badge></a>
+<a href="/threads/contact-us.220922/" class="child-label">Contact</a>
+</div>
+<div class="child">
+<a href="/forums/rules-information.710/" class="vf-icon dd vf-icon-CRules badgeContainer " title="Site Rules" data-badge></a>
+<a href="/forums/rules-information.710/" class="child-label">Site Rules</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-sicon vf-sicon-Maps badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Resources badgeContainer " data-badge></a>
+<a href class="vf-label">Resources</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/repositories/models.530/" class="vf-icon dd vf-icon-RModels badgeContainer " title="Models" data-badge></a>
+<a href="/repositories/models.530/" class="child-label">Models</a>
+</div>
+<div class="child">
+<a href="/repositories/skins.552/" class="vf-icon dd vf-icon-RSkins badgeContainer " title="Skins" data-badge></a>
+<a href="/repositories/skins.552/" class="child-label">Skins</a>
+</div>
+<div class="child">
+<a href="/repositories/icons.541/" class="vf-icon dd vf-icon-RIcons badgeContainer " title="Icons" data-badge></a>
+<a href="/repositories/icons.541/" class="child-label">Icons</a>
+</div>
+<div class="child">
+<a href="/repositories/spells.569/" class="vf-icon dd vf-icon-RSpells badgeContainer " title="Spells" data-badge></a>
+<a href="/repositories/spells.569/" class="child-label">Spells</a>
+</div>
+<div class="child">
+<a href="/forums/code.718/" class="vf-icon dd vf-icon-RCode badgeContainer " title="Code" data-badge></a>
+<a href="/forums/code.718/" class="child-label">Code</a>
+</div>
+<div class="child">
+<a href="/repositories/packs.542/" class="vf-icon dd vf-icon-RPacks badgeContainer " title="Packs" data-badge></a>
+<a href="/repositories/packs.542/" class="child-label">Packs</a>
+</div>
+<div class="child">
+<a href="/repositories/sounds.783/" class="vf-icon dd vf-icon-RSound badgeContainer " title="Sounds" data-badge></a>
+<a href="/repositories/sounds.783/" class="child-label">Sounds</a>
+</div>
+<div class="child">
+<a href="/repositories/tools.560/" class="vf-icon dd vf-icon-RTools badgeContainer " title="Tools" data-badge></a>
+<a href="/repositories/tools.560/" class="child-label">Tools</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-sicon vf-sicon-Tutorials badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+<div class="vf-button">
+<a href="/media" class="vf-sicon vf-sicon-Gallery badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-More badgeContainer " data-badge></a>
+<a href class="vf-label">Utility</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/pastebin" class="vf-icon dd vf-icon-MPastebin badgeContainer " title="Pastebin" data-badge></a>
+<a href="/pastebin" class="child-label">Pastebin</a>
+</div>
+<div class="child">
+<a href="/asset-scanner" class="vf-icon dd vf-icon-MAssetScanner badgeContainer " title="Asset Scanner" data-badge></a>
+<a href="/asset-scanner" class="child-label">Asset Scanner</a>
+</div>
+<div class="child">
+<a href="/icon-borderiser" class="vf-icon dd vf-icon-MIconBorder badgeContainer " title="Icon Borderiser" data-badge></a>
+<a href="/icon-borderiser" class="child-label">Icon Borderiser</a>
+</div>
+<div class="child">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-icon dd vf-icon-MSanityChecker badgeContainer " title="Model Checker" data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="child-label">Model Checker</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-sicon vf-sicon-Support badgeContainer " data-badge></a>
+<a href class="vf-label">Support Us</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="https://hivemerchshop.com" class="vf-icon dd vf-icon-Shop badgeContainer " title="Shop" data-badge></a>
+<a href="https://hivemerchshop.com" class="child-label">Shop</a>
+</div>
+<div class="child">
+<a href="/pages/hero" class="vf-icon dd vf-icon-BecomeHero badgeContainer " title="Become a Hero" data-badge></a>
+<a href="/pages/hero" class="child-label">Become a Hero</a>
+</div>
+<div class="child">
+<a href="/pages/advertising" class="vf-icon dd vf-icon-BuyaBanner badgeContainer " title="Buy a Banner" data-badge></a>
+<a href="/pages/advertising" class="child-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<div class="vindit-feature-small size-2">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="Facebook" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="Twitter" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube badgeContainer " data-xf-init="tooltip" data-placement="bottom" title="YouTube" data-badge></a>
+</div>
+</div>
+<span class="vf-label">&nbsp;</span>
+</div>
+</div>
+</div>
+<div class="p-nav-opposite">
+<div class="p-navgroup p-account p-navgroup--guest">
+<a href="/pages/guest-hero/" class="vindit-sign-up-upgrade p-navgroup-link">Support Us</a>
+<a href="/login/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--logIn" data-xf-click="overlay" data-follow-redirects="on">
+<span class="p-navgroup-linkText">Log in</span>
+</a>
+<a href="/register/" class="p-navgroup-link p-navgroup-link--textual p-navgroup-link--register" data-xf-click="overlay" data-follow-redirects="on">
+<span class="p-navgroup-linkText">Register</span>
+</a>
+</div>
+<div class="p-navgroup p-discovery">
+<a href="/whats-new/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--whatsnew" aria-label="What&#039;s new" title="What&#039;s new">
+<i aria-hidden="true"></i>
+<span class="p-navgroup-linkText">What's new</span>
+</a>
+<a href="/search/" class="p-navgroup-link p-navgroup-link--iconic p-navgroup-link--search" data-xf-click="menu" data-xf-key="/" aria-label="Search" aria-expanded="false" aria-haspopup="true" title="Search">
+<i aria-hidden="true"></i>
+<span class="p-navgroup-linkText">Search</span>
+</a>
+<div class="menu menu--structural menu--wide" data-menu="menu" aria-hidden="true">
+<form action="/search/search" method="post" class="menu-content" data-xf-init="quick-search">
+<h3 class="menu-header">Search</h3>
+<div class="menu-row">
+<div class="inputGroup inputGroup--joined">
+<input type="text" class="input" name="keywords" placeholder="Search…" aria-label="Search" data-menu-autofocus="true" />
+<select name="constraints" class="js-quickSearch-constraint input" aria-label="Search within">
+<option value>Everywhere</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;}">Threads</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;,&quot;c&quot;:{&quot;nodes&quot;:[280],&quot;child_nodes&quot;:1}}">This forum</option>
+<option value="{&quot;search_type&quot;:&quot;post&quot;,&quot;c&quot;:{&quot;thread&quot;:327849}}">This thread</option>
+</select>
+</div>
+</div>
+<div class="menu-row">
+<label class="iconic"><input type="checkbox" name="c[title_only]" value="1" /><i aria-hidden="true"></i><span class="iconic-label">Search titles only
+<span tabindex="0" role="button" data-xf-init="tooltip" data-trigger="hover focus click" title="Tags will also be searched in content where tags are supported">
+<i class="fa--xf far fa-question-circle u-muted u-smaller" aria-hidden="true"></i>
+</span></span></label>
+</div>
+<div class="menu-row">
+<div class="inputGroup">
+<span class="inputGroup-text" id="ctrl_search_menu_by_member">By:</span>
+<input type="text" class="input" name="c[users]" data-xf-init="auto-complete" placeholder="Member" aria-labelledby="ctrl_search_menu_by_member" />
+</div>
+</div>
+<div class="menu-footer">
+<span class="menu-footer-controls">
+<button type="submit" class="button--primary button button--icon button--icon--search"><span class="button-text">Search</span></button>
+<a href="/search/" class="button"><span class="button-text">Advanced search…</span></a>
+</span>
+</div>
+<input type="hidden" name="_xfToken" value="1711485143,ff17af2927e1fcb4a9b5907d26ba8331" />
+</form>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<header class="p-header" id="header">
+<div class="p-header-inner">
+<div class="p-header-content">
+<div class="p-header-logo p-header-logo--image">
+<a href="https://www.hiveworkshop.com">
+<img src="/data/styles/7/styles/vindit-reforged/hive-logo.png" srcset alt="HIVE" width="250" height="156" />
+</a>
+</div>
+<div class="vindit-feature-buttons-wrap">
+<div class="vindit-feature-buttons" data-xf-init="vindit-feature-buttons">
+<div class="just-to-get-right-width"></div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Community badgeContainer " data-badge></a>
+<a href class="vf-label">Community</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/forums" class="vf-icon dd vf-icon-CForums badgeContainer " title="Forums" data-badge></a>
+<a href="/forums" class="child-label">Forums</a>
+</div>
+<div class="child">
+<a href="/whats-new" class="vf-icon dd vf-icon-CWhatsNew badgeContainer " title="What&#039;s New" data-badge></a>
+<a href="/whats-new" class="child-label">What&#039;s New</a>
+</div>
+<div class="child">
+<a href="/watched/threads" class="vf-icon dd vf-icon-CWatched badgeContainer " title="Watched" data-badge></a>
+<a href="/watched/threads" class="child-label">Watched</a>
+</div>
+<div class="child">
+<a href="https://discord.hiveworkshop.com/" class="vf-icon dd vf-icon-CDiscord badgeContainer " title="Discord" data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="child-label">Discord</a>
+</div>
+<div class="child">
+<a href="/streams" class="vf-icon dd vf-icon-CStreams badgeContainer badgeContainer--highlighted" title="Streams" data-badge="1"></a>
+<a href="/streams" class="child-label">Streams</a>
+</div>
+<div class="child">
+<a href="/members" class="vf-icon dd vf-icon-CMembers badgeContainer " title="Members" data-badge></a>
+<a href="/members" class="child-label">Members</a>
+</div>
+<div class="child">
+<a href="/members/?key=staff_members" class="vf-icon dd vf-icon-CStaff badgeContainer " title="Staff" data-badge></a>
+<a href="/members/?key=staff_members" class="child-label">Staff</a>
+</div>
+<div class="child">
+<a href="/threads/contact-us.220922/" class="vf-icon dd vf-icon-CContact badgeContainer " title="Contact" data-badge></a>
+<a href="/threads/contact-us.220922/" class="child-label">Contact</a>
+</div>
+<div class="child">
+<a href="/forums/rules-information.710/" class="vf-icon dd vf-icon-CRules badgeContainer " title="Site Rules" data-badge></a>
+<a href="/forums/rules-information.710/" class="child-label">Site Rules</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-icon vf-icon-Maps badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Resources badgeContainer " data-badge></a>
+<a href class="vf-label">Resources</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/repositories/models.530/" class="vf-icon dd vf-icon-RModels badgeContainer " title="Models" data-badge></a>
+<a href="/repositories/models.530/" class="child-label">Models</a>
+</div>
+<div class="child">
+<a href="/repositories/skins.552/" class="vf-icon dd vf-icon-RSkins badgeContainer " title="Skins" data-badge></a>
+<a href="/repositories/skins.552/" class="child-label">Skins</a>
+</div>
+<div class="child">
+<a href="/repositories/icons.541/" class="vf-icon dd vf-icon-RIcons badgeContainer " title="Icons" data-badge></a>
+<a href="/repositories/icons.541/" class="child-label">Icons</a>
+</div>
+<div class="child">
+<a href="/repositories/spells.569/" class="vf-icon dd vf-icon-RSpells badgeContainer " title="Spells" data-badge></a>
+<a href="/repositories/spells.569/" class="child-label">Spells</a>
+</div>
+<div class="child">
+<a href="/forums/code.718/" class="vf-icon dd vf-icon-RCode badgeContainer " title="Code" data-badge></a>
+<a href="/forums/code.718/" class="child-label">Code</a>
+</div>
+<div class="child">
+<a href="/repositories/packs.542/" class="vf-icon dd vf-icon-RPacks badgeContainer " title="Packs" data-badge></a>
+<a href="/repositories/packs.542/" class="child-label">Packs</a>
+</div>
+<div class="child">
+<a href="/repositories/sounds.783/" class="vf-icon dd vf-icon-RSound badgeContainer " title="Sounds" data-badge></a>
+<a href="/repositories/sounds.783/" class="child-label">Sounds</a>
+</div>
+<div class="child">
+<a href="/repositories/tools.560/" class="vf-icon dd vf-icon-RTools badgeContainer " title="Tools" data-badge></a>
+<a href="/repositories/tools.560/" class="child-label">Tools</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-icon vf-icon-Tutorials badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+<div class="vf-button">
+<a href="/media" class="vf-icon vf-icon-Gallery badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-More badgeContainer " data-badge></a>
+<a href class="vf-label">Utility</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="/pastebin" class="vf-icon dd vf-icon-MPastebin badgeContainer " title="Pastebin" data-badge></a>
+<a href="/pastebin" class="child-label">Pastebin</a>
+</div>
+<div class="child">
+<a href="/asset-scanner" class="vf-icon dd vf-icon-MAssetScanner badgeContainer " title="Asset Scanner" data-badge></a>
+<a href="/asset-scanner" class="child-label">Asset Scanner</a>
+</div>
+<div class="child">
+<a href="/icon-borderiser" class="vf-icon dd vf-icon-MIconBorder badgeContainer " title="Icon Borderiser" data-badge></a>
+<a href="/icon-borderiser" class="child-label">Icon Borderiser</a>
+</div>
+<div class="child">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-icon dd vf-icon-MSanityChecker badgeContainer " title="Model Checker" data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="child-label">Model Checker</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button drop-down">
+<a href class="vf-icon vf-icon-Support badgeContainer " data-badge></a>
+<a href class="vf-label">Support Us</a>
+<div class="children-wrap">
+<div class="children">
+<div class="children-inner">
+<div class="child">
+<a href="https://hivemerchshop.com" class="vf-icon dd vf-icon-Shop badgeContainer " title="Shop" data-badge></a>
+<a href="https://hivemerchshop.com" class="child-label">Shop</a>
+</div>
+<div class="child">
+<a href="/pages/hero" class="vf-icon dd vf-icon-BecomeHero badgeContainer " title="Become a Hero" data-badge></a>
+<a href="/pages/hero" class="child-label">Become a Hero</a>
+</div>
+<div class="child">
+<a href="/pages/advertising" class="vf-icon dd vf-icon-BuyaBanner badgeContainer " title="Buy a Banner" data-badge></a>
+<a href="/pages/advertising" class="child-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="vf-button">
+<div class="vindit-feature-small size-2">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook badgeContainer " data-xf-init="tooltip" data-placement="right" title="Facebook" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter badgeContainer " data-xf-init="tooltip" data-placement="right" title="Twitter" data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube badgeContainer " data-xf-init="tooltip" data-placement="right" title="YouTube" data-badge></a>
+</div>
+</div>
+<span class="vf-label">&nbsp;</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="offCanvasMenu offCanvasMenu--nav js-headerOffCanvasMenu" data-menu="menu" aria-hidden="true" data-ocm-builder="navigation">
+<div class="offCanvasMenu-backdrop" data-menu-close="true"></div>
+<div class="offCanvasMenu-content">
+<div class="offCanvasMenu-header">
+Menu
+<a class="offCanvasMenu-closer" data-menu-close="true" role="button" tabindex="0" aria-label="Close"></a>
+</div>
+<div class="p-offCanvasRegisterLink">
+<div class="offCanvasMenu-linkHolder">
+<a href="/login/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+Log in
+</a>
+</div>
+<hr class="offCanvasMenu-separator" />
+<div class="offCanvasMenu-linkHolder">
+<a href="/register/" class="offCanvasMenu-link" data-xf-click="overlay" data-menu-close="true">
+Register
+</a>
+</div>
+<hr class="offCanvasMenu-separator" />
+</div>
+<div class="block vf-side-menu " style="--vf-button-sprite-dimension: 50px">
+<div class="block-container">
+<div class="block-minorHeader">Community</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/forums" class="vf-sicon vf-sicon-CForums-100px badgeContainer " data-badge></a>
+<a href="/forums" class="vf-label">Forums</a>
+</div>
+<div class="vf-button">
+<a href="/whats-new" class="vf-sicon vf-sicon-CWhatsNew-100px badgeContainer " data-badge></a>
+<a href="/whats-new" class="vf-label">What&#039;s New</a>
+</div>
+<div class="vf-button">
+<a href="/watched/threads" class="vf-sicon vf-sicon-CWatched-100px badgeContainer " data-badge></a>
+<a href="/watched/threads" class="vf-label">Watched</a>
+</div>
+<div class="vf-button">
+<a href="https://discord.hiveworkshop.com/" class="vf-sicon vf-sicon-CDiscord-100px badgeContainer " data-badge></a>
+<a href="https://discord.hiveworkshop.com/" class="vf-label">Discord</a>
+</div>
+<div class="vf-button">
+<a href="/streams" class="vf-sicon vf-sicon-CStreams-100px badgeContainer " data-badge></a>
+<a href="/streams" class="vf-label">Streams</a>
+</div>
+<div class="vf-button">
+<a href="/members" class="vf-sicon vf-sicon-CMembers-100px badgeContainer " data-badge></a>
+<a href="/members" class="vf-label">Members</a>
+</div>
+<div class="vf-button">
+<a href="/members/?key=staff_members" class="vf-sicon vf-sicon-CStaff-100px badgeContainer " data-badge></a>
+<a href="/members/?key=staff_members" class="vf-label">Staff</a>
+</div>
+<div class="vf-button">
+<a href="/threads/contact-us.220922/" class="vf-sicon vf-sicon-CContact-100px badgeContainer " data-badge></a>
+<a href="/threads/contact-us.220922/" class="vf-label">Contact</a>
+</div>
+<div class="vf-button">
+<a href="/forums/rules-information.710/" class="vf-sicon vf-sicon-CRules-100px badgeContainer " data-badge></a>
+<a href="/forums/rules-information.710/" class="vf-label">Site Rules</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Maps</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/repositories/maps.564/" class="vf-sicon vf-sicon-Maps-100px badgeContainer " data-badge></a>
+<a href="/repositories/maps.564/" class="vf-label">Maps</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Resources</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/repositories/models.530/" class="vf-sicon vf-sicon-RModels-100px badgeContainer " data-badge></a>
+<a href="/repositories/models.530/" class="vf-label">Models</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/skins.552/" class="vf-sicon vf-sicon-RSkins-100px badgeContainer " data-badge></a>
+<a href="/repositories/skins.552/" class="vf-label">Skins</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/icons.541/" class="vf-sicon vf-sicon-RIcons-100px badgeContainer " data-badge></a>
+<a href="/repositories/icons.541/" class="vf-label">Icons</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/spells.569/" class="vf-sicon vf-sicon-RSpells-100px badgeContainer " data-badge></a>
+<a href="/repositories/spells.569/" class="vf-label">Spells</a>
+</div>
+<div class="vf-button">
+<a href="/forums/code.718/" class="vf-sicon vf-sicon-RCode-100px badgeContainer " data-badge></a>
+<a href="/forums/code.718/" class="vf-label">Code</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/packs.542/" class="vf-sicon vf-sicon-RPacks-100px badgeContainer " data-badge></a>
+<a href="/repositories/packs.542/" class="vf-label">Packs</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/sounds.783/" class="vf-sicon vf-sicon-RSound-100px badgeContainer " data-badge></a>
+<a href="/repositories/sounds.783/" class="vf-label">Sounds</a>
+</div>
+<div class="vf-button">
+<a href="/repositories/tools.560/" class="vf-sicon vf-sicon-RTools-100px badgeContainer " data-badge></a>
+<a href="/repositories/tools.560/" class="vf-label">Tools</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Tutorials</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-sicon vf-sicon-Tutorials-100px badgeContainer " data-badge></a>
+<a href="/forums/warcraft-iii-tutorials.206/" class="vf-label">Tutorials</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Gallery</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/media" class="vf-sicon vf-sicon-Gallery-100px badgeContainer " data-badge></a>
+<a href="/media" class="vf-label">Gallery</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Utility</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="/pastebin" class="vf-sicon vf-sicon-MPastebin-100px badgeContainer " data-badge></a>
+<a href="/pastebin" class="vf-label">Pastebin</a>
+</div>
+<div class="vf-button">
+<a href="/asset-scanner" class="vf-sicon vf-sicon-MAssetScanner-100px badgeContainer " data-badge></a>
+<a href="/asset-scanner" class="vf-label">Asset Scanner</a>
+</div>
+<div class="vf-button">
+<a href="/icon-borderiser" class="vf-sicon vf-sicon-MIconBorder-100px badgeContainer " data-badge></a>
+<a href="/icon-borderiser" class="vf-label">Icon Borderiser</a>
+</div>
+<div class="vf-button">
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-sicon vf-sicon-MSanityChecker-100px badgeContainer " data-badge></a>
+<a href="https://www.hiveworkshop.com/pages/model-checker/" class="vf-label">Model Checker</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">Support Us</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="https://hivemerchshop.com" class="vf-sicon vf-sicon-Shop-100px badgeContainer " data-badge></a>
+<a href="https://hivemerchshop.com" class="vf-label">Shop</a>
+</div>
+<div class="vf-button">
+<a href="/pages/hero" class="vf-sicon vf-sicon-BecomeHero-100px badgeContainer " data-badge></a>
+<a href="/pages/hero" class="vf-label">Become a Hero</a>
+</div>
+<div class="vf-button">
+<a href="/pages/advertising" class="vf-sicon vf-sicon-BuyaBanner-100px badgeContainer " data-badge></a>
+<a href="/pages/advertising" class="vf-label">Buy a Banner</a>
+</div>
+</div>
+</div>
+<div class="block-container">
+<div class="block-minorHeader">&nbsp;</div>
+<div class="block-body">
+<div class="vf-button">
+<a href="https://facebook.com/thworkshop" class="vf-sicon vf-sicon-SFacebook-100px badgeContainer " data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://twitter.com/hiveworkshop" class="vf-sicon vf-sicon-STwitter-100px badgeContainer " data-badge></a>
+</div>
+<div class="vf-button">
+<a href="https://www.youtube.com/channel/UCYZeJGiJLYAOSBeAj14hz0Q" class="vf-sicon vf-sicon-SYouTube-100px badgeContainer " data-badge></a>
+</div>
+</div>
+</div>
+</div>
+<div class="offCanvasMenu-installBanner js-installPromptContainer" style="display: none;" data-xf-init="install-prompt">
+<div class="offCanvasMenu-installBanner-header">Install the app</div>
+<button type="button" class="js-installPromptButton button"><span class="button-text">Install</span></button>
+</div>
+</div>
+</div>
+<div class="p-body">
+<div class="p-body-inner">
+
+<div data-xf-init="vindit-rotator" class="vindit-rotator popuplated" data-ads="[{&quot;title&quot;:&quot;YOUR PROJECT HERE&quot;,&quot;url&quot;:&quot;\/ads\/2\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/2-big.jpg?1671984466&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/2-small.jpg?1671984466&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Chronicles of the Second War&quot;,&quot;url&quot;:&quot;\/ads\/5\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/5-big.jpg?1704463545&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/5-small.jpg?1704463545&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Legends of Arkain&quot;,&quot;url&quot;:&quot;\/ads\/6\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/6-big.jpg?0&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/6-small.jpg?0&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Sunken City&quot;,&quot;url&quot;:&quot;\/ads\/7\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/7-big.jpg?1709242868&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/7-small.jpg?1709242868&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Frostcraft&quot;,&quot;url&quot;:&quot;\/ads\/9\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/9-big.jpg?1631304471&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/9-small.jpg?1631304471&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Daemonic Sword ORPG&quot;,&quot;url&quot;:&quot;\/ads\/11\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/11-big.jpg?1636533817&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/11-small.jpg?1636533817&quot;,&quot;weight&quot;:4},{&quot;title&quot;:&quot;Reforged UI Designer&quot;,&quot;url&quot;:&quot;\/ads\/12\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/12-big.jpg?1636407708&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/12-small.jpg?1636407708&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Re-Reforged&quot;,&quot;url&quot;:&quot;\/ads\/14\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/14-big.jpg?1709241162&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/14-small.jpg?1709241162&quot;,&quot;weight&quot;:1},{&quot;title&quot;:&quot;Hive Heroes&quot;,&quot;url&quot;:&quot;\/ads\/16\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/16-big.jpg?1677700993&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/16-small.jpg?1677700993&quot;,&quot;weight&quot;:4},{&quot;title&quot;:&quot;The Heart of Storms&quot;,&quot;url&quot;:&quot;\/ads\/32\/open&quot;,&quot;bigImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/32-big.jpg?1676072362&quot;,&quot;smallImageUrl&quot;:&quot;\/data\/vindit-rotator\/0\/32-small.jpg?1676072362&quot;,&quot;weight&quot;:1}]">
+</div>
+<ul class="notices notices--scrolling notices--isMulti js-notices" data-xf-init="notices" data-type="scrolling" data-scroll-interval="6">
+<li class="notice js-notice notice--primary" data-notice-id="359" data-delay-duration="0" data-display-duration="0" data-auto-dismiss data-visibility>
+<div class="notice-content">
+<a href="/account/dismiss-notice?notice_id=359" class="notice-dismiss js-noticeDismiss" data-xf-init="tooltip" title="Dismiss notice"></a>
+<a href="https://www.hiveworkshop.com/threads/%F0%9F%8E%A8texturing-contest-33-peaceful-npc.351609/"><img align="left" style="padding-right: 10px; padding-bottom: 10px;" src="https://www.hiveworkshop.com/attachments/texturingcontest33-png.455615/"></a>🏆 Texturing Contest #33 is OPEN! Contestants must re-texture a SD unit model found in-game (Warcraft 3 Classic), recreating the unit into a peaceful NPC version. 🔗<a href="https://www.hiveworkshop.com/threads/%F0%9F%8E%A8texturing-contest-33-peaceful-npc.351609/">Click here to enter!</a>
+</div>
+</li>
+<li class="notice js-notice notice--primary" data-notice-id="362" data-delay-duration="0" data-display-duration="0" data-auto-dismiss data-visibility>
+<div class="notice-content">
+<a href="/account/dismiss-notice?notice_id=362" class="notice-dismiss js-noticeDismiss" data-xf-init="tooltip" title="Dismiss notice"></a>
+<a href="https://www.hiveworkshop.com/threads/%F0%9F%92%AChd-modeling-contest-6-theme-discussion.353157/"><img align="left" style="padding-right: 10px; padding-bottom: 10px;" src="https://www.hiveworkshop.com/attachments/modelthemediscussion-png.414923/?hash=6b8efec2632c4f87d2637827ea893ee6"></a>It's time for the first HD Modeling Contest of 2024. Join the theme discussion for Hive's HD Modeling Contest #6! <a href="https://www.hiveworkshop.com/threads/%F0%9F%92%AChd-modeling-contest-6-theme-discussion.353157/">Click here to post your idea!</a>
+</div>
+</li>
+</ul>
+<style>
+		ins.adsbygoogle[data-ad-status="unfilled"] {
+		    display: none !important;
+		}
+		</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2513844252750044" crossorigin="anonymous"></script>
+<ul class="p-breadcrumbs " itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="https://www.hiveworkshop.com" itemprop="item">
+<span itemprop="name">Home</span>
+</a>
+<meta itemprop="position" content="1" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/" itemprop="item">
+<span itemprop="name">Forums</span>
+</a>
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/#warcraft-iii.255" itemprop="item">
+<span itemprop="name">Warcraft III</span>
+</a>
+<meta itemprop="position" content="3" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/warcraft-3-tutorials.206/" itemprop="item">
+<span itemprop="name">Warcraft 3 Tutorials</span>
+</a>
+<meta itemprop="position" content="4" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/scripting-tutorials.280/" itemprop="item">
+<span itemprop="name">Scripting Tutorials</span>
+</a>
+<meta itemprop="position" content="5" />
+</li>
+</ul>
+<noscript class="js-jsWarning"><div class="blockMessage blockMessage--important blockMessage--iconic u-noJsOnly">JavaScript is disabled. For a better experience, please enable JavaScript in your browser before proceeding.</div></noscript>
+<div class="blockMessage blockMessage--important blockMessage--iconic js-browserWarning" style="display: none">You are using an out of date browser. It may not display this or other websites correctly.<br/>You should upgrade or use an <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">alternative browser</a>.</div>
+<div class="p-body-header">
+<div class="p-title ">
+<h1 class="p-title-value">UI: Save&amp;Load Frames</h1>
+</div>
+</div>
+<div class="p-body-main  ">
+<div class="p-body-contentCol"></div>
+<div class="p-body-content">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2513844252750044" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2513844252750044" data-ad-slot="8264602515" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+			if (window.innerWidth <= 900) {
+		     (adsbygoogle = window.adsbygoogle || []).push({});
+			}
+		</script>
+<div class="p-body-pageContent">
+<div class="block block--messages" data-xf-init data-type="post" data-href="/inline-mod/" data-search-target="*">
+<span class="u-anchorTarget" id="posts"></span>
+<div class="block-outer"></div>
+<div class="block-outer js-threadStatusField"></div>
+<div class="block-container lbContainer" data-xf-init="lightbox select-to-quote" data-message-selector=".js-post" data-lb-id="thread-327849" data-lb-universal="0">
+<div class="block-body js-replyNewMessageContainer">
+<article class="message message--post js-post js-inlineModContainer  " data-author="Tasyen" data-content="post-3451247" id="js-post-3451247">
+<span class="u-anchorTarget" id="post-3451247"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/tasyen.194042/" class="avatar avatar--m" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/194/194042.jpg?1484672291" srcset="/data/avatars/l/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="experience-bar lvf_30 lv_35" data-xf-init="tooltip" title="12,004 / 12,250 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 64.34%"></div>
+</div>
+Level 35
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Jul 18, 2010</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>2,188</dd>
+</dl>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-194042" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">65</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-194042" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/tasyen.194042/resources">Resources</a></h4>
+<a href="/repositories/560/?author=Tasyen" class="menu-linkRow">Tools <span class="count">2</span></a>
+<a href="/repositories/564/?author=Tasyen" class="menu-linkRow">Maps <span class="count">3</span></a>
+<a href="/repositories/569/?author=Tasyen" class="menu-linkRow">Spells <span class="count">10</span></a>
+<a href="/repositories/779/?author=Tasyen" class="menu-linkRow">User Interface <span class="count">15</span></a>
+<a href="/members/tasyen.194042/resources#JASS" class="menu-linkRow">JASS <span class="count">3</span></a>
+<a href="/members/tasyen.194042/resources#Lua" class="menu-linkRow">Lua <span class="count">10</span></a>
+<a href="/members/tasyen.194042/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">22</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3451247" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2020-10-11T07:26:13+0100" data-time="1602397573" data-date-string="Oct 11, 2020" data-time-string="7:26 AM" title="Oct 11, 2020 at 7:26 AM" itemprop="datePublished">Oct 11, 2020</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451247" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3451247/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451247" rel="nofollow">
+#1
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3451247" data-lb-caption-desc="Tasyen &middot; Oct 11, 2020 at 7:26 AM">
+<article class="message-body js-selectToQuote">
+<div>
+<div class="bbWrapper"><span style="color: orange"><h3 style="margin: 0">
+Introduction
+</h3></span><div style="margin-left: 20px">Currently none of the versions of warcraft 3 that have access to the UI-Frame natives do probably Save&amp;Load the usage of Frames/TOC (this was written when 1.32.8 /1.32.9 PTR were the current Versions).<br/>
+<br/>
+This broken Save&amp;Load stops Frames from being recreaterd/modified when the Game is Loaded (but they still hold their handleIds). It is even worser as it sounds, when one uses a variable reference of such a now broken Frame then the game can crash.<br/>
+<br/>
+As mapper one could fix it without Blizzard fixing the Save&amp;Load for Frames.&#8203;</div><br/>
+<span style="color: orange"><h3 style="margin: 0">
+How to fix it
+</h3></span><div style="margin-left: 20px">The idea is simple. We just let the old broken Frames leak (can't do much about it anyway) and repeat every frame creation/modification after a 0s timer run in a trigger with a Game was Loaded Event. With that all references should be updated and the custom UI does continue to work. Also be aware that you also have to restore any counters being used in the Frame creation and that you have to repeat the TOC-Loading. This works cleaner and better when your Frame creation/modification function doesn't do anything else then TOC and Frames.<br/>
+<br/>
+One could write a ReLoader with that Game is Loaded Event that runs all the UI-Frame Init Functions.<br/>
+In Lua one would have array of functions. But in vjass a trigger to which you add all the functions that have to be repeated after loading the game.&#8203;</div><br/>
+<span style="color: orange"><h3 style="margin: 0">
+Code Example
+</h3></span><div style="margin-left: 20px">The crash code Example, it just creates a button at the center of the screen at 0s and makes it visible once a second. After the game was Saved &amp; Loaded. The game will crash as soon the game tries to make the frame visible.<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Lua:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="lua"><code>do
+    local frame
+    local real = MarkGameStarted
+    function MarkGameStarted()
+    real()
+        frame = BlzCreateFrame(&quot;ScriptDialogButton&quot;,  BlzGetOriginFrame(ORIGIN_FRAME_GAME_UI, 0), 0, 0)       
+        BlzFrameSetAbsPoint(frame, FRAMEPOINT_CENTER, 0.4, 0.3)
+        TimerStart(CreateTimer(), 1, true, function()
+            BlzFrameSetVisible(frame, true)
+        end)
+    end
+end</code></pre>
+</div>
+</div>This are a Lua and vjass example of the above described &quot;reloading&quot;.<br/>
+<div class="bbcode-tabs" data-xf-init="tabs-tag">
+<div class="titles">
+<h3 data-id="0" class="active">Lua</h3>
+<h3 data-id="1" class>vjass</h3>
+</div>
+<div class="bodies">
+<div data-id="0" class="active"><br/>
+First the reloader:<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Lua:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="lua"><code>-- in 1.31 and upto 1.32.9 PTR (when I wrote this). Frames are not correctly saved and loaded, breaking the game.
+-- This runs all functions added to it with a 0s delay after the game was loaded.
+do
+    local data = {}
+    local real = MarkGameStarted
+    local timer
+   
+    function FrameLoaderAdd(func)
+        table.insert(data, func)
+    end
+    function MarkGameStarted()
+        real()
+        local trigger = CreateTrigger()
+        timer = CreateTimer()
+        TriggerRegisterGameEvent(trigger, EVENT_GAME_LOADED)
+        TriggerAddAction(trigger, function()
+            TimerStart(timer, 0, false, function()
+                for _,v in ipairs(data) do v() end
+            end)
+           
+        end)
+    end
+end</code></pre>
+</div>
+</div>Second the example: This takes the first Hero Button and moves it to the center of the screen.<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Lua:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="lua"><code>do
+    local real = MarkGameStarted
+    local function Init()
+        BlzEnableUIAutoPosition(false)
+        local frame = BlzGetOriginFrame(ORIGIN_FRAME_HERO_BUTTON, 0)
+        BlzFrameClearAllPoints(frame)
+        BlzFrameSetAbsPoint(frame, FRAMEPOINT_TOPLEFT, 0.4, 0.3)       
+    end
+    function MarkGameStarted()
+        real()
+        Init()
+        if FrameLoaderAdd then FrameLoaderAdd(Init) end
+    end
+end</code></pre>
+</div>
+</div></div>
+<div data-id="1" class><br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+JASS:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="jass"><code>library FrameLoader initializer init_function
+// in 1.31 and upto 1.32.9 PTR (when I wrote this). Frames are not correctly saved and loaded, breaking the game.
+// This library runs all functions added to it with a 0s delay after the game was loaded.
+// function FrameLoaderAdd takes code func returns nothing
+    // func runs when the game is loaded.
+    globals
+        private trigger eventTrigger = CreateTrigger()
+        private trigger actionTrigger = CreateTrigger()
+        private timer t = CreateTimer()
+    endglobals
+    function FrameLoaderAdd takes code func returns nothing
+        call TriggerAddAction(actionTrigger, func)
+    endfunction
+    private function timerAction takes nothing returns nothing
+        call TriggerExecute(actionTrigger)
+    endfunction
+    private function eventAction takes nothing returns nothing
+        call TimerStart(t, 0, false, function timerAction)
+    endfunction
+    private function init_function takes nothing returns nothing
+        call TriggerRegisterGameEvent(eventTrigger, EVENT_GAME_LOADED)
+        call TriggerAddAction(eventTrigger, function eventAction)       
+    endfunction
+endlibrary</code></pre>
+</div>
+</div>Second the example: This takes the first Hero Button and moves it to the center of the screen.<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+JASS:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="jass"><code>library Example initializer init_function requires FrameLoader
+    private function At0s takes nothing returns nothing
+        local framehandle frame = BlzGetOriginFrame(ORIGIN_FRAME_HERO_BUTTON, 0)
+        call BlzEnableUIAutoPosition(false)
+        call BlzFrameClearAllPoints(frame)
+        call BlzFrameSetAbsPoint(frame, FRAMEPOINT_TOPLEFT, 0.4, 0.3)   
+    endfunction
+    private function init_function takes nothing returns nothing
+        call FrameLoaderAdd(function At0s)
+        call TimerStart(CreateTimer(), 0, false, function At0s)
+    endfunction
+endlibrary</code></pre>
+</div>
+</div></div>
+</div>
+</div></div></div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+<section class="message-attachments">
+<h4 class="block-textHeader">Attachments</h4>
+<ul class="attachmentList">
+<li class="file file--linked">
+<a class="u-anchorTarget" id="attachment-365906"></a>
+<a class="file-preview" href="/attachments/crash-w3x.365906/" target="_blank">
+<span class="file-typeIcon">
+<i class="fa--xf far fa-file" aria-hidden="true"></i>
+</span>
+</a>
+<div class="file-content">
+<div class="file-info">
+<span class="file-name" title="Crash.w3x">Crash.w3x</span>
+<div class="file-meta">
+12 KB
+&middot; Views: 123
+</div>
+</div>
+</div>
+</li>
+<li class="file file--linked">
+<a class="u-anchorTarget" id="attachment-365907"></a>
+<a class="file-preview" href="/attachments/lua-w3x.365907/" target="_blank">
+<span class="file-typeIcon">
+<i class="fa--xf far fa-file" aria-hidden="true"></i>
+</span>
+</a>
+<div class="file-content">
+<div class="file-info">
+<span class="file-name" title="Lua.w3x">Lua.w3x</span>
+<div class="file-meta">
+12.7 KB
+&middot; Views: 119
+</div>
+</div>
+</div>
+</li>
+<li class="file file--linked">
+<a class="u-anchorTarget" id="attachment-365908"></a>
+<a class="file-preview" href="/attachments/vjass-w3x.365908/" target="_blank">
+<span class="file-typeIcon">
+<i class="fa--xf far fa-file" aria-hidden="true"></i>
+</span>
+</a>
+<div class="file-content">
+<div class="file-info">
+<span class="file-name" title="vjass.w3x">vjass.w3x</span>
+<div class="file-meta">
+13.5 KB
+&middot; Views: 91
+</div>
+</div>
+</div>
+</li>
+</ul>
+</section>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList is-active">
+<ul class="reactionSummary">
+<li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="/data/assets/reactions/like.png" srcset="/data/assets/reactions/like2x.png 2x" class="reaction-image js-reaction" alt="Like" title="Like" /></span></li>
+</ul>
+<span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="/posts/3451247/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>emperor_d3st</bdi> and <bdi>deepstrasz</bdi></a>
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+<article class="message message--post js-post js-inlineModContainer  " data-author="Chaosy" data-content="post-3451250" id="js-post-3451250" itemscope itemtype="https://schema.org/Comment" itemid="https://www.hiveworkshop.com/posts/3451250/">
+<meta itemprop="mainEntity" itemscope itemtype="https://schema.org/DiscussionForumPosting" itemid="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<span class="u-anchorTarget" id="post-3451250"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-28.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/chaosy.206796/" class="username " dir="auto" data-user-id="206796" data-xf-init="member-tooltip"><span class="username--moderator ">Chaosy</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/chaosy.206796/" class="avatar avatar--m" data-user-id="206796" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/206/206796.jpg?1601258329" srcset="/data/avatars/l/206/206796.jpg?1601258329 2x" alt="Chaosy" class="avatar-u206796-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-28.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/chaosy.206796/" class="username " dir="auto" data-user-id="206796" data-xf-init="member-tooltip"><span class="username--moderator ">Chaosy</span></a></span>
+</h4>
+<div class="userBanner userBanner userBanner--primary message-userBanner" itemprop="jobTitle"><span class="userBanner-before"></span><strong>Tutorial Reviewer</strong><span class="userBanner-after"></span></div>
+</div>
+<div class="experience-bar lvf_40 lv_40" data-xf-init="tooltip" title="15,431 / 16,000 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 27.97%"></div>
+</div>
+Level 40
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Jun 9, 2011</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>13,182</dd>
+</dl>
+</div>
+<div class="vindit-medals-message-showcase">
+<div class="group">
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/570_r.png?1528655068" title="Cinematic Contest #7 - Second Place" data-xf-init="tooltip" /></a>
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/568_r.png?1519323559" title="Hero Contest #9 - Third Place" data-xf-init="tooltip" /></a>
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/212_r.png?1465538567" title="Super Donor" data-xf-init="tooltip" /></a>
+</div>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-206796" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">42</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-206796" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/chaosy.206796/resources">Resources</a></h4>
+<a href="/repositories/541/?author=Chaosy" class="menu-linkRow">Icons <span class="count">3</span></a>
+<a href="/repositories/564/?author=Chaosy" class="menu-linkRow">Maps <span class="count">1</span></a>
+<a href="/repositories/569/?author=Chaosy" class="menu-linkRow">Spells <span class="count">22</span></a>
+<a href="/repositories/770/?author=Chaosy" class="menu-linkRow">Ported Icons <span class="count">5</span></a>
+<a href="/members/chaosy.206796/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">11</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3451250" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2020-10-11T07:37:13+0100" data-time="1602398233" data-date-string="Oct 11, 2020" data-time-string="7:37 AM" title="Oct 11, 2020 at 7:37 AM" itemprop="datePublished">Oct 11, 2020</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451250" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3451250/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451250" rel="nofollow">
+#2
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3451250" data-lb-caption-desc="Chaosy &middot; Oct 11, 2020 at 7:37 AM">
+<article class="message-body js-selectToQuote">
+<div itemprop="text">
+<div class="bbWrapper">Couldn't let me approve your tutorials before adding a new one could you?<br/>
+<br/>
+No edits needed in terms of structure which is nice.<br/>
+<br/>
+Will read through this later today.<br/>
+<br/>
+edit: so I suspect this might be too simple.<br/>
+<div class="bbCodeBlock bbCodeBlock--screenLimited bbCodeBlock--code">
+<div class="bbCodeBlock-title">
+Wurst:
+</div>
+<div class="bbCodeBlock-content" dir="ltr">
+<pre class="bbCodeCode" dir="ltr" data-xf-init="code-block" data-lang="wurst"><code>import ClosureTimers
+import ClosureEvents
+
+init
+    EventListener.add(EVENT_GAME_LOADED) -&gt;
+        doAfter(0) -&gt;
+            myUiInitFunction()</code></pre>
+</div>
+</div><br/>
+This is basically it right? admittedly wurst's standard library makes this insanely simple but I consider the following:<br/>
+<br/>
+A user will fall into one of two groups<br/>
+<ul>
+<li data-xf-list-type="ul">The user has knowledge of some text based modding language and is using that to build their own UI from scratcch</li>
+<li data-xf-list-type="ul">The user has downloaded a pre-built UI</li>
+</ul>The first group does not need a tutorial to achieve this as they already know basic coding, they just need the information &quot;create frames after a 0 second delay on load&quot;<br/>
+The second group should rely on the prebuild supporting this to begin with.</div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+<div class="message-lastEdit">
+Last edited: <time class="u-dt" dir="auto" datetime="2020-11-03T09:33:16+0000" data-time="1604395996" data-date-string="Nov 3, 2020" data-time-string="9:33 AM" title="Nov 3, 2020 at 9:33 AM" itemprop="dateModified">Nov 3, 2020</time>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList is-active">
+<ul class="reactionSummary">
+<li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="/data/assets/reactions/like.png" srcset="/data/assets/reactions/like2x.png 2x" class="reaction-image js-reaction" alt="Like" title="Like" /></span></li>
+</ul>
+<span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="/posts/3451250/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>deepstrasz</bdi> and <bdi>Kroemel</bdi></a>
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+<article class="message message--post js-post js-inlineModContainer  " data-author="MyPad" data-content="post-3451418" id="js-post-3451418" itemscope itemtype="https://schema.org/Comment" itemid="https://www.hiveworkshop.com/posts/3451418/">
+<meta itemprop="mainEntity" itemscope itemtype="https://schema.org/DiscussionForumPosting" itemid="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<span class="u-anchorTarget" id="post-3451418"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-8.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/mypad.237959/" class="username " dir="auto" data-user-id="237959" data-xf-init="member-tooltip"><span class=" ">MyPad</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/mypad.237959/" class="avatar avatar--m" data-user-id="237959" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/237/237959.jpg?1631890760" srcset="/data/avatars/l/237/237959.jpg?1631890760 2x" alt="MyPad" class="avatar-u237959-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-8.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/mypad.237959/" class="username " dir="auto" data-user-id="237959" data-xf-init="member-tooltip"><span class=" ">MyPad</span></a></span>
+</h4>
+</div>
+<div class="experience-bar lvf_20 lv_28" data-xf-init="tooltip" title="7,421 / 7,840 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 23.81%"></div>
+</div>
+Level 28
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>May 9, 2014</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>1,805</dd>
+</dl>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-237959" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">23</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-237959" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/mypad.237959/resources">Resources</a></h4>
+<a href="/repositories/530/?author=MyPad" class="menu-linkRow">Models <span class="count">1</span></a>
+<a href="/repositories/541/?author=MyPad" class="menu-linkRow">Icons <span class="count">3</span></a>
+<a href="/repositories/564/?author=MyPad" class="menu-linkRow">Maps <span class="count">4</span></a>
+<a href="/repositories/569/?author=MyPad" class="menu-linkRow">Spells <span class="count">6</span></a>
+<a href="/members/mypad.237959/resources#JASS" class="menu-linkRow">JASS <span class="count">7</span></a>
+<a href="/members/mypad.237959/resources#Lua" class="menu-linkRow">Lua <span class="count">1</span></a>
+<a href="/members/mypad.237959/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">1</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3451418" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2020-10-12T04:57:27+0100" data-time="1602475047" data-date-string="Oct 12, 2020" data-time-string="4:57 AM" title="Oct 12, 2020 at 4:57 AM" itemprop="datePublished">Oct 12, 2020</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451418" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3451418/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451418" rel="nofollow">
+#3
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3451418" data-lb-caption-desc="MyPad &middot; Oct 12, 2020 at 4:57 AM">
+<article class="message-body js-selectToQuote">
+<div itemprop="text">
+<div class="bbWrapper">Can existing custom frames (bugged through save and load) be safely destroyed, or would it still crash the game? This is in the context of recreating the frames afterwards.</div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList ">
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+<article class="message message--post js-post js-inlineModContainer  " data-author="Tasyen" data-content="post-3451437" id="js-post-3451437" itemscope itemtype="https://schema.org/Comment" itemid="https://www.hiveworkshop.com/posts/3451437/">
+<meta itemprop="mainEntity" itemscope itemtype="https://schema.org/DiscussionForumPosting" itemid="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<span class="u-anchorTarget" id="post-3451437"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/tasyen.194042/" class="avatar avatar--m" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/194/194042.jpg?1484672291" srcset="/data/avatars/l/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="experience-bar lvf_30 lv_35" data-xf-init="tooltip" title="12,004 / 12,250 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 64.34%"></div>
+</div>
+Level 35
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Jul 18, 2010</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>2,188</dd>
+</dl>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-194042" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">65</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-194042" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/tasyen.194042/resources">Resources</a></h4>
+<a href="/repositories/560/?author=Tasyen" class="menu-linkRow">Tools <span class="count">2</span></a>
+<a href="/repositories/564/?author=Tasyen" class="menu-linkRow">Maps <span class="count">3</span></a>
+<a href="/repositories/569/?author=Tasyen" class="menu-linkRow">Spells <span class="count">10</span></a>
+<a href="/repositories/779/?author=Tasyen" class="menu-linkRow">User Interface <span class="count">15</span></a>
+<a href="/members/tasyen.194042/resources#JASS" class="menu-linkRow">JASS <span class="count">3</span></a>
+<a href="/members/tasyen.194042/resources#Lua" class="menu-linkRow">Lua <span class="count">10</span></a>
+<a href="/members/tasyen.194042/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">22</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3451437" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2020-10-12T09:16:25+0100" data-time="1602490585" data-date-string="Oct 12, 2020" data-time-string="9:16 AM" title="Oct 12, 2020 at 9:16 AM" itemprop="datePublished">Oct 12, 2020</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451437" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3451437/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451437" rel="nofollow">
+#4
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3451437" data-lb-caption-desc="Tasyen &middot; Oct 12, 2020 at 9:16 AM">
+<article class="message-body js-selectToQuote">
+<div itemprop="text">
+<div class="bbWrapper"><blockquote data-attributes="member: 237959" data-quote="MyPad" data-source="post: 3451418" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+<div class="bbCodeBlock-title">
+<a href="/goto/post?id=3451418" class="bbCodeBlock-sourceJump" rel="nofollow" data-xf-click="attribution" data-content-selector="#post-3451418">MyPad said:</a>
+</div>
+<div class="bbCodeBlock-content">
+<div class="bbCodeBlock-expandContent js-expandContent ">
+Can existing custom frames (bugged through save and load) be safely destroyed, or would it still crash the game? This is in the context of recreating the frames afterwards.
+</div>
+<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+</div>
+</blockquote>Even BlzDestroyFrame crahses the game when used onto a variable that points to such a broken frame after loading (happens in 1.31 and 1.32.8).<br/>
+Tring to reach that frame over BlzGetFrameByName won't give you the broken Frame, hence no crash but also no Destroyed Frame.<br/>
+<br/>
+<blockquote data-attributes="member: 206796" data-quote="Chaosy" data-source="post: 3451250" class="bbCodeBlock bbCodeBlock--expandable bbCodeBlock--quote js-expandWatch">
+<div class="bbCodeBlock-title">
+<a href="/goto/post?id=3451250" class="bbCodeBlock-sourceJump" rel="nofollow" data-xf-click="attribution" data-content-selector="#post-3451250">Chaosy said:</a>
+</div>
+<div class="bbCodeBlock-content">
+<div class="bbCodeBlock-expandContent js-expandContent ">
+This is basically it right? admittedly wurst's standard library makes this insanely simple but I consider the following:<br/>
+<br/>
+A user will fall into one of two groups<br/>
+<ul>
+<li data-xf-list-type="ul">The user has knowledge of some text based modding language and is using that to build their own UI from scratcch</li>
+<li data-xf-list-type="ul">The user has downloaded a pre-built UI</li>
+</ul>The first group does not need a tutorial to achieve this as they already know basic coding, they just need the information &quot;create frames after a 0 second delay on load&quot;<br/>
+The second group should rely on the prebuild supporting this to begin with.
+</div>
+<div class="bbCodeBlock-expandLink js-expandLink"><a role="button" tabindex="0">Click to expand...</a></div>
+</div>
+</blockquote>You got this, Total true. The solution is quite simple.</div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList ">
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+<article class="message message--post js-post js-inlineModContainer  " data-author="Chaosy" data-content="post-3451553" id="js-post-3451553" itemscope itemtype="https://schema.org/Comment" itemid="https://www.hiveworkshop.com/posts/3451553/">
+<meta itemprop="mainEntity" itemscope itemtype="https://schema.org/DiscussionForumPosting" itemid="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<span class="u-anchorTarget" id="post-3451553"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-28.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/chaosy.206796/" class="username " dir="auto" data-user-id="206796" data-xf-init="member-tooltip"><span class="username--moderator ">Chaosy</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/chaosy.206796/" class="avatar avatar--m" data-user-id="206796" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/206/206796.jpg?1601258329" srcset="/data/avatars/l/206/206796.jpg?1601258329 2x" alt="Chaosy" class="avatar-u206796-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-28.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/chaosy.206796/" class="username " dir="auto" data-user-id="206796" data-xf-init="member-tooltip"><span class="username--moderator ">Chaosy</span></a></span>
+</h4>
+<div class="userBanner userBanner userBanner--primary message-userBanner" itemprop="jobTitle"><span class="userBanner-before"></span><strong>Tutorial Reviewer</strong><span class="userBanner-after"></span></div>
+</div>
+<div class="experience-bar lvf_40 lv_40" data-xf-init="tooltip" title="15,431 / 16,000 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 27.97%"></div>
+</div>
+Level 40
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Jun 9, 2011</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>13,182</dd>
+</dl>
+</div>
+<div class="vindit-medals-message-showcase">
+<div class="group">
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/570_r.png?1528655068" title="Cinematic Contest #7 - Second Place" data-xf-init="tooltip" /></a>
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/568_r.png?1519323559" title="Hero Contest #9 - Third Place" data-xf-init="tooltip" /></a>
+<a href="/members/chaosy.206796/medals"><img src="/data/medal/212_r.png?1465538567" title="Super Donor" data-xf-init="tooltip" /></a>
+</div>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-206796" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">42</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-206796" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/chaosy.206796/resources">Resources</a></h4>
+<a href="/repositories/541/?author=Chaosy" class="menu-linkRow">Icons <span class="count">3</span></a>
+<a href="/repositories/564/?author=Chaosy" class="menu-linkRow">Maps <span class="count">1</span></a>
+<a href="/repositories/569/?author=Chaosy" class="menu-linkRow">Spells <span class="count">22</span></a>
+<a href="/repositories/770/?author=Chaosy" class="menu-linkRow">Ported Icons <span class="count">5</span></a>
+<a href="/members/chaosy.206796/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">11</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3451553" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2020-10-13T00:41:59+0100" data-time="1602546119" data-date-string="Oct 13, 2020" data-time-string="12:41 AM" title="Oct 13, 2020 at 12:41 AM" itemprop="datePublished">Oct 13, 2020</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451553" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3451553/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3451553" rel="nofollow">
+#5
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3451553" data-lb-caption-desc="Chaosy &middot; Oct 13, 2020 at 12:41 AM">
+<article class="message-body js-selectToQuote">
+<div itemprop="text">
+<div class="bbWrapper">Right.<br/>
+<br/>
+So while I technically think this is too simple for a tutorial, given that the target audience probably already knows jass; (more detailed reasoning in my previous post)<br/>
+I think this is mandatory information on the subject which is currently not common knowledge and needs to be spread somehow.<br/>
+<br/>
+So for pure usefulness, I'll approve it, although I will try to keep this one at the back of my head in case blizzard fixes this in the future.</div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+<div class="message-lastEdit">
+Last edited: <time class="u-dt" dir="auto" datetime="2020-10-13T00:48:10+0100" data-time="1602546490" data-date-string="Oct 13, 2020" data-time-string="12:48 AM" title="Oct 13, 2020 at 12:48 AM" itemprop="dateModified">Oct 13, 2020</time>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList ">
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+<article class="message message--post js-post js-inlineModContainer  " data-author="Tasyen" data-content="post-3601083" id="js-post-3601083" itemscope itemtype="https://schema.org/Comment" itemid="https://www.hiveworkshop.com/posts/3601083/">
+<meta itemprop="mainEntity" itemscope itemtype="https://schema.org/DiscussionForumPosting" itemid="https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/" />
+<span class="u-anchorTarget" id="post-3601083"></span>
+<div class="message-inner">
+<div class="message-cell message-cell--user">
+<section class="message-user ">
+<div class="message-userDetails name-above-avatar">
+<h4 class="message-name">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="message-avatar ">
+<div class="message-avatar-wrapper">
+<a href="/members/tasyen.194042/" class="avatar avatar--m" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/m/194/194042.jpg?1484672291" srcset="/data/avatars/l/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-m" width="96" height="96" loading="lazy" itemprop="image" />
+</a>
+</div>
+</div>
+<div class="message-userDetails">
+<h4 class="message-name name-below-avatar">
+<span class="vindit-rank-icon" style="padding: 0 36px; min-height: 19px; background: url(/data/rarank-files/1-3.png?1665598739) no-repeat center left; background-size: 31px 19px"><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></span>
+</h4>
+</div>
+<div class="experience-bar lvf_30 lv_35" data-xf-init="tooltip" title="12,004 / 12,250 EXP">
+<div class="progress-container">
+<div class="progress" style="width: 64.34%"></div>
+</div>
+Level 35
+</div>
+<div class="message-userExtras">
+<dl class="pairs pairs--justified">
+<dt>Joined</dt>
+<dd>Jul 18, 2010</dd>
+</dl>
+<dl class="pairs pairs--justified">
+<dt>Messages</dt>
+<dd>2,188</dd>
+</dl>
+</div>
+<div class="ratory-resource-expander">
+<a class="button button--link menuTrigger" data-xf-click="menu" data-menu=".js-experienceMenu-194042" aria-expanded="false" aria-haspopup="true"><span class="button-text">Resources: <span class="resource-count">65</span></span></a>
+<div class="menu experienceMenu js-experienceMenu-194042" data-menu="menu" aria-hidden="true">
+<div class="menu-content">
+<h4 class="menu-header"><a href="/members/tasyen.194042/resources">Resources</a></h4>
+<a href="/repositories/560/?author=Tasyen" class="menu-linkRow">Tools <span class="count">2</span></a>
+<a href="/repositories/564/?author=Tasyen" class="menu-linkRow">Maps <span class="count">3</span></a>
+<a href="/repositories/569/?author=Tasyen" class="menu-linkRow">Spells <span class="count">10</span></a>
+<a href="/repositories/779/?author=Tasyen" class="menu-linkRow">User Interface <span class="count">15</span></a>
+<a href="/members/tasyen.194042/resources#JASS" class="menu-linkRow">JASS <span class="count">3</span></a>
+<a href="/members/tasyen.194042/resources#Lua" class="menu-linkRow">Lua <span class="count">10</span></a>
+<a href="/members/tasyen.194042/resources#Tutorials" class="menu-linkRow">Tutorials <span class="count">22</span></a>
+</div>
+</div>
+</div>
+<span class="message-userArrow"></span>
+</section>
+</div>
+<div class="message-cell message-cell--main">
+<div class="message-main js-quickEditTarget">
+<header class="message-attribution message-attribution--split">
+<ul class="message-attribution-main listInline ">
+<li class="u-concealed">
+<a href="/threads/ui-save-load-frames.327849/post-3601083" rel="nofollow">
+<time class="u-dt" dir="auto" datetime="2023-11-09T07:54:58+0000" data-time="1699516498" data-date-string="Nov 9, 2023" data-time-string="7:54 AM" title="Nov 9, 2023 at 7:54 AM" itemprop="datePublished">Nov 9, 2023</time>
+</a>
+</li>
+</ul>
+<ul class="message-attribution-opposite message-attribution-opposite--list ">
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3601083" class="message-attribution-gadget" data-xf-init="share-tooltip" data-href="/posts/3601083/share" aria-label="Share" rel="nofollow">
+<i class="fa--xf far fa-share-alt" aria-hidden="true"></i>
+</a>
+</li>
+<li>
+<a href="/threads/ui-save-load-frames.327849/post-3601083" rel="nofollow">
+#6
+</a>
+</li>
+</ul>
+</header>
+<div class="message-content js-messageContent">
+<div class="message-userContent lbContainer js-lbContainer " data-lb-id="post-3601083" data-lb-caption-desc="Tasyen &middot; Nov 9, 2023 at 7:54 AM">
+<article class="message-body js-selectToQuote">
+<div itemprop="text">
+<div class="bbWrapper">Warcraft 3 crashes when an EditBox contained 5k bytes and the game is saved.<br/>
+Edit: or maybe not and it is something else like line seperator \n.</div>
+</div>
+<div class="js-selectToQuoteEnd">&nbsp;</div>
+</article>
+</div>
+<div class="message-lastEdit">
+Last edited: <time class="u-dt" dir="auto" datetime="2023-11-09T08:01:55+0000" data-time="1699516915" data-date-string="Nov 9, 2023" data-time-string="8:01 AM" title="Nov 9, 2023 at 8:01 AM" itemprop="dateModified">Nov 9, 2023</time>
+</div>
+</div>
+<footer class="message-footer">
+<div class="reactionsBar js-reactionsList is-active">
+<ul class="reactionSummary">
+<li><span class="reaction reaction--small reaction--1" data-reaction-id="1"><i aria-hidden="true"></i><img src="/data/assets/reactions/like.png" srcset="/data/assets/reactions/like2x.png 2x" class="reaction-image js-reaction" alt="Like" title="Like" /></span></li>
+</ul>
+<span class="u-srOnly">Reactions:</span>
+<a class="reactionsBar-link" href="/posts/3601083/reactions" data-xf-click="overlay" data-cache="false" rel="nofollow"><bdi>deepstrasz</bdi></a>
+</div>
+<div class="js-historyTarget message-historyTarget toggleTarget" data-href="trigger-href"></div>
+</footer>
+</div>
+</div>
+</div>
+</article>
+</div>
+</div>
+<div class="block-outer block-outer--after">
+<div class="block-outer-opposite">
+<a href="/login/" class="button--link button--wrap button" data-xf-click="overlay"><span class="button-text">
+You must log in or register to reply here.
+</span></a>
+</div>
+</div>
+</div>
+<div class="block" data-widget-id="11" data-widget-key="xfes_thread_view_below_quick_reply_similar_threads" data-widget-definition="xfes_similar_threads">
+<div class="block-container">
+<h3 class="block-header">Similar threads</h3>
+<div class="block-body">
+<div class="structItemContainer">
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-315860" data-author="Tasyen">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--s" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" srcset="/data/avatars/m/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/ui-positionate-frames.315860/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/ui-positionate-frames.315860/preview">UI: Positionate Frames</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></li>
+<li class="structItem-startDate"><a href="/threads/ui-positionate-frames.315860/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-05-29T12:04:48+0100" data-time="1559127888" data-date-string="May 29, 2019" data-time-string="12:04 PM" title="May 29, 2019 at 12:04 PM">May 29, 2019</time></a></li>
+<li><a href="/forums/scripting-tutorials.280/">Scripting Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 9">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>21</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>13K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/ui-positionate-frames.315860/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2023-05-15T10:08:23+0100" data-time="1684141703" data-date-string="May 15, 2023" data-time-string="10:08 AM" title="May 15, 2023 at 10:08 AM">May 15, 2023</time></a>
+<div class="structItem-minor">
+<a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--xxs" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-316665" data-author="Tasyen">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--s" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" srcset="/data/avatars/m/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/ui-frames-and-tooltips.316665/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/ui-frames-and-tooltips.316665/preview">UI: Frames and Tooltips</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></li>
+<li class="structItem-startDate"><a href="/threads/ui-frames-and-tooltips.316665/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-06-27T09:08:55+0100" data-time="1561622935" data-date-string="Jun 27, 2019" data-time-string="9:08 AM" title="Jun 27, 2019 at 9:08 AM">Jun 27, 2019</time></a></li>
+<li><a href="/forums/scripting-tutorials.280/">Scripting Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 5">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>44</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>14K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/ui-frames-and-tooltips.316665/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2023-07-09T18:59:42+0100" data-time="1688925582" data-date-string="Jul 9, 2023" data-time-string="6:59 PM" title="Jul 9, 2023 at 6:59 PM">Jul 9, 2023</time></a>
+<div class="structItem-minor">
+<a href="/members/uncle.268855/" class="username " dir="auto" data-user-id="268855" data-xf-init="member-tooltip"><span class="username--staff username--moderator ">Uncle</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/uncle.268855/" class="avatar avatar--xxs" data-user-id="268855" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/268/268855.jpg?1616452223" alt="Uncle" class="avatar-u268855-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-315961" data-author="Tasyen">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--s" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" srcset="/data/avatars/m/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/ui-creating-a-cam-control.315961/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/ui-creating-a-cam-control.315961/preview">UI: Creating a Cam control</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></li>
+<li class="structItem-startDate"><a href="/threads/ui-creating-a-cam-control.315961/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-06-01T10:00:54+0100" data-time="1559379654" data-date-string="Jun 1, 2019" data-time-string="10:00 AM" title="Jun 1, 2019 at 10:00 AM">Jun 1, 2019</time></a></li>
+<li><a href="/forums/scripting-tutorials.280/">Scripting Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 5">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>24</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>6K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/ui-creating-a-cam-control.315961/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2021-03-04T00:49:23+0000" data-time="1614818963" data-date-string="Mar 4, 2021" data-time-string="12:49 AM" title="Mar 4, 2021 at 12:49 AM">Mar 4, 2021</time></a>
+<div class="structItem-minor">
+<a href="/members/esto.257859/" class="username " dir="auto" data-user-id="257859" data-xf-init="member-tooltip"><span class=" ">ESTO</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/esto.257859/" class="avatar avatar--xxs" data-user-id="257859" data-xf-init="member-tooltip">
+<img src="https://www.hiveworkshop.com/styles/default/vindit-avatars/male48.jpg" alt="ESTO" class="avatar-u257859-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-316254" data-author="Tasyen">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--s" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" srcset="/data/avatars/m/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/ui-creating-a-bar.316254/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/ui-creating-a-bar.316254/preview">UI: Creating a Bar</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></li>
+<li class="structItem-startDate"><a href="/threads/ui-creating-a-bar.316254/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-06-12T19:14:57+0100" data-time="1560363297" data-date-string="Jun 12, 2019" data-time-string="7:14 PM" title="Jun 12, 2019 at 7:14 PM">Jun 12, 2019</time></a></li>
+<li><a href="/forums/scripting-tutorials.280/">Scripting Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 5">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>30</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>11K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/ui-creating-a-bar.316254/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2022-10-06T19:08:37+0100" data-time="1665079717" data-date-string="Oct 6, 2022" data-time-string="7:08 PM" title="Oct 6, 2022 at 7:08 PM">Oct 6, 2022</time></a>
+<div class="structItem-minor">
+<a href="/members/thompzon.283802/" class="username " dir="auto" data-user-id="283802" data-xf-init="member-tooltip"><span class=" ">ThompZon</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/thompzon.283802/" class="avatar avatar--xxs" data-user-id="283802" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/283/283802.jpg?1592492124" alt="ThompZon" class="avatar-u283802-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+<div class="structItem structItem--thread js-inlineModContainer js-threadListItem-315897" data-author="Tasyen">
+<div class="structItem-cell structItem-cell--icon">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--s" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" srcset="/data/avatars/m/194/194042.jpg?1484672291 2x" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--main" data-xf-init="touch-proxy">
+<div class="structItem-title">
+<a href="/threads/ui-create-a-textbutton.315897/" class data-tp-primary="on" data-xf-init="preview-tooltip" data-preview-url="/threads/ui-create-a-textbutton.315897/preview">UI: Create a TextButton</a>
+</div>
+<div class="structItem-minor">
+<ul class="structItem-parts">
+<li><a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a></li>
+<li class="structItem-startDate"><a href="/threads/ui-create-a-textbutton.315897/" rel="nofollow"><time class="u-dt" dir="auto" datetime="2019-05-30T09:44:57+0100" data-time="1559205897" data-date-string="May 30, 2019" data-time-string="9:44 AM" title="May 30, 2019 at 9:44 AM">May 30, 2019</time></a></li>
+<li><a href="/forums/scripting-tutorials.280/">Scripting Tutorials</a></li>
+</ul>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--meta" title="First message reaction score: 8">
+<dl class="pairs pairs--justified">
+<dt>Replies</dt>
+<dd>12</dd>
+</dl>
+<dl class="pairs pairs--justified structItem-minor">
+<dt>Views</dt>
+<dd>9K</dd>
+</dl>
+</div>
+<div class="structItem-cell structItem-cell--latest">
+<a href="/threads/ui-create-a-textbutton.315897/latest" rel="nofollow"><time class="structItem-latestDate u-dt" dir="auto" datetime="2021-01-11T20:55:19+0000" data-time="1610398519" data-date-string="Jan 11, 2021" data-time-string="8:55 PM" title="Jan 11, 2021 at 8:55 PM">Jan 11, 2021</time></a>
+<div class="structItem-minor">
+<a href="/members/tasyen.194042/" class="username " dir="auto" data-user-id="194042" data-xf-init="member-tooltip"><span class=" ">Tasyen</span></a>
+</div>
+</div>
+<div class="structItem-cell structItem-cell--icon structItem-cell--iconEnd">
+<div class="structItem-iconContainer">
+<a href="/members/tasyen.194042/" class="avatar avatar--xxs" data-user-id="194042" data-xf-init="member-tooltip">
+<img src="/data/avatars/s/194/194042.jpg?1484672291" alt="Tasyen" class="avatar-u194042-s" width="48" height="48" loading="lazy" />
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="blockMessage blockMessage--none">
+<div class="shareButtons shareButtons--iconic" data-xf-init="share-buttons" data-page-url data-page-title data-page-desc data-page-image>
+<span class="shareButtons-label">Share:</span>
+<div class="shareButtons-buttons">
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--reddit" data-href="https://reddit.com/submit?url={url}&amp;title={title}">
+<i aria-hidden="true"></i>
+<span>Reddit</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--pinterest" data-href="https://pinterest.com/pin/create/bookmarklet/?url={url}&amp;description={title}&amp;media={image}">
+<i aria-hidden="true"></i>
+<span>Pinterest</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--tumblr" data-href="https://www.tumblr.com/widgets/share/tool?canonicalUrl={url}&amp;title={title}">
+<i aria-hidden="true"></i>
+<span>Tumblr</span>
+</a>
+<a class="shareButtons-button shareButtons-button--brand shareButtons-button--whatsApp" data-href="https://api.whatsapp.com/send?text={title}&nbsp;{url}">
+<i aria-hidden="true"></i>
+<span>WhatsApp</span>
+</a>
+<a class="shareButtons-button shareButtons-button--email" data-href="mailto:?subject={title}&amp;body={url}">
+<i aria-hidden="true"></i>
+<span>Email</span>
+</a>
+<a class="shareButtons-button shareButtons-button--share is-hidden" data-xf-init="web-share" data-title data-text data-url data-hide=".shareButtons-button:not(.shareButtons-button--share)">
+<i aria-hidden="true"></i>
+<span>Share</span>
+</a>
+<a class="shareButtons-button shareButtons-button--link is-hidden" data-clipboard="{url}">
+<i aria-hidden="true"></i>
+<span>Link</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ul class="p-breadcrumbs p-breadcrumbs--bottom" itemscope itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="https://www.hiveworkshop.com" itemprop="item">
+<span itemprop="name">Home</span>
+</a>
+<meta itemprop="position" content="1" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/" itemprop="item">
+<span itemprop="name">Forums</span>
+</a>
+<meta itemprop="position" content="2" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/#warcraft-iii.255" itemprop="item">
+<span itemprop="name">Warcraft III</span>
+</a>
+<meta itemprop="position" content="3" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/warcraft-3-tutorials.206/" itemprop="item">
+<span itemprop="name">Warcraft 3 Tutorials</span>
+</a>
+<meta itemprop="position" content="4" />
+</li>
+<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+<a href="/forums/scripting-tutorials.280/" itemprop="item">
+<span itemprop="name">Scripting Tutorials</span>
+</a>
+<meta itemprop="position" content="5" />
+</li>
+</ul>
+</div>
+</div>
+<footer class="p-footer" id="footer">
+<div class="p-footer-inner">
+<div class="p-footer-row">
+<div class="p-footer-row-main">
+<ul class="p-footer-linkList">
+<li><a href="/misc/style" data-xf-click="overlay" data-xf-init="tooltip" title="Style chooser" rel="nofollow">
+<i class="fa--xf far fa-paint-brush" aria-hidden="true"></i> Reforged
+</a></li>
+</ul>
+</div>
+<div class="p-footer-row-opposite">
+<ul class="p-footer-linkList">
+<li><a href="/misc/contact" data-xf-click="overlay">Contact us</a></li>
+<li><a href="/help/terms/">Terms and rules</a></li>
+<li><a href="/help/privacy-policy/">Privacy policy</a></li>
+<li><a href="/help/">Help</a></li>
+<li><a href="https://www.hiveworkshop.com">Home</a></li>
+<li><a href="/forums/-/index.rss" target="_blank" class="p-footer-rssLink" title="RSS"><span aria-hidden="true"><i class="fa--xf far fa-rss" aria-hidden="true"></i><span class="u-srOnly">RSS</span></span></a></li>
+</ul>
+</div>
+</div>
+<div class="p-footer-copyright">
+<a href="https://xenforo.com" class="u-concealed" dir="ltr" target="_blank" rel="sponsored noopener">Community platform by XenForo<sup>&reg;</sup> <span class="copyright">&copy; 2010-2023 XenForo Ltd.</span></a>
+<div style="text-align:center;"><a href="https://xf2seo.com/" target="_blank" class="u-concealed external">XenForo SEO Add-on by XF2SEO</a></div>
+<div class="rio-copyright">
+<a href="https://xenforo.com/community/resources/6024/" target="_blank">XenRio 2 PRO</a> &copy; Jason Axelrod of
+<a href="https://8wayrun.com/" target="_blank">8WAYRUN</a>
+</div>
+</div>
+</div>
+</footer>
+</div> 
+<div class="u-bottomFixer js-bottomFixTarget">
+<ul class="notices notices--bottom_fixer  js-notices" data-xf-init="notices" data-type="bottom_fixer" data-scroll-interval="6">
+<li class="notice js-notice notice--primary notice--cookie" data-notice-id="-1" data-delay-duration="0" data-display-duration="0" data-auto-dismiss="0" data-visibility>
+<div class="notice-content">
+<div class="u-alignCenter">
+This site uses cookies to help personalise content, tailor your experience and to keep you logged in if you register.<br/>
+By continuing to use this site, you are consenting to our use of cookies.
+</div>
+<div class="u-inputSpacer u-alignCenter">
+<a href="/account/dismiss-notice" class="js-noticeDismiss button--notice button button--icon button--icon--confirm"><span class="button-text">Accept</span></a>
+<a href="/help/cookies" class="button--notice button"><span class="button-text">Learn more…</span></a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="u-scrollButtons js-scrollButtons" data-trigger-type="up">
+<a href="#top" class="button--scroll button" data-xf-click="scroll-to"><span class="button-text"><i class="fa--xf far fa-arrow-up" aria-hidden="true"></i><span class="u-srOnly">Top</span></span></a>
+</div>
+<script src="/js/vendor/jquery/jquery-3.5.1.min.js?_v=b6041806"></script>
+<script src="/js/vendor/vendor-compiled.js?_v=b6041806"></script>
+<script src="/js/xf/core-compiled.js?_v=b6041806"></script>
+<script src="/js/xf/code_block-compiled.js?_v=b6041806"></script>
+<script src="/js/vindit-bbcode/prism.jass.min.js?_v=b6041806"></script>
+<script src="/js/vindit-bbcode/prism.wurst.min.js?v1&amp;_v=b6041806"></script>
+<script src="/js/extralanguages/prism-lua.min.js?_v=b6041806"></script>
+<script src="/js/extralanguages/prism-jass.min.js?_v=b6041806"></script>
+<script src="/js/vindit-bbcode/tabs.min.js?_v=b6041806"></script>
+<script src="/js/extralanguages/prism-wurst.min.js?_v=b6041806"></script>
+<script src="/js/vindit-rotator/rotator.js?v3&amp;_v=b6041806"></script>
+<script src="/js/xf/notice.min.js?_v=b6041806"></script>
+<script src="/js/xf/carousel-compiled.js?_v=b6041806"></script>
+<script>
+		jQuery.extend(true, XF.config, {
+			// 
+			userId: 0,
+			enablePush: true,
+			pushAppServerKey: 'BCy6YIwV2vLKzpiyj5h_GcbS0klHu8vmc6DmNW5Gd3n6Dc330mbJjF_iAF2i4a0VkP5q0rA6m9jPsBHjVgYBZoY',
+			url: {
+				fullBase: 'https://www.hiveworkshop.com/',
+				basePath: '/',
+				css: '/css.php?css=__SENTINEL__&s=7&l=1&d=1708462169',
+				keepAlive: '/login/keep-alive'
+			},
+			cookie: {
+				path: '/',
+				domain: '',
+				prefix: 'xf_',
+				secure: true,
+				consentMode: 'simple',
+				consented: ["optional","_third_party"]
+			},
+			cacheKey: '6dfc183557a486c9692dfa7afd77889a',
+			csrf: '1711485143,ff17af2927e1fcb4a9b5907d26ba8331',
+			js: {"\/js\/xf\/code_block-compiled.js?_v=b6041806":true,"\/js\/vindit-bbcode\/prism.jass.min.js?_v=b6041806":true,"\/js\/vindit-bbcode\/prism.wurst.min.js?v1&_v=b6041806":true,"\/js\/extralanguages\/prism-lua.min.js?_v=b6041806":true,"\/js\/extralanguages\/prism-jass.min.js?_v=b6041806":true,"\/js\/vindit-bbcode\/tabs.min.js?_v=b6041806":true,"\/js\/extralanguages\/prism-wurst.min.js?_v=b6041806":true,"\/js\/vindit-rotator\/rotator.js?v3&_v=b6041806":true,"\/js\/xf\/notice.min.js?_v=b6041806":true,"\/js\/xf\/carousel-compiled.js?_v=b6041806":true},
+			css: {"public:attachments.less":true,"public:bb_code.less":true,"public:bb_code_jass.less":true,"public:bb_code_tag_tabs.less":true,"public:experience_bar.less":true,"public:lightslider.less":true,"public:medals.less":true,"public:message.less":true,"public:notices.less":true,"public:ratory_message_resource_counts.less":true,"public:share_controls.less":true,"public:structured_list.less":true,"public:vindit_features.less":true,"public:vindit_rotator_ads.less":true,"public:vindit_sign_up_upgrade.less":true,"public:extra.less":true},
+			time: {
+				now: 1711485143,
+				today: 1711411200,
+				todayDow: 2,
+				tomorrow: 1711497600,
+				yesterday: 1711324800,
+				week: 1710892800
+			},
+			borderSizeFeature: '3px',
+			fontAwesomeWeight: 'r',
+			enableRtnProtect: true,
+			
+			enableFormSubmitSticky: true,
+			uploadMaxFilesize: 3221225472,
+			allowedVideoExtensions: ["m4v","mov","mp4","mp4v","mpeg","mpg","ogv","webm"],
+			allowedAudioExtensions: ["mp3","opus","ogg","wav"],
+			shortcodeToEmoji: true,
+			visitorCounts: {
+				conversations_unread: '0',
+				alerts_unviewed: '0',
+				total_unread: '0',
+				title_count: true,
+				icon_indicator: true
+			},
+			jsState: {},
+			publicMetadataLogoUrl: '/data/styles/7/styles/vindit-reforged/512.logo.og.png',
+			publicPushBadgeUrl: 'https://www.hiveworkshop.com/styles/default/xenforo/bell.png'
+		});
+
+		jQuery.extend(XF.phrases, {
+			// 
+			date_x_at_time_y: "{date} at {time}",
+			day_x_at_time_y:  "{day} at {time}",
+			yesterday_at_x:   "Yesterday at {time}",
+			x_minutes_ago:    "{minutes} minutes ago",
+			one_minute_ago:   "1 minute ago",
+			a_moment_ago:     "A moment ago",
+			today_at_x:       "Today at {time}",
+			in_a_moment:      "In a moment",
+			in_a_minute:      "In a minute",
+			in_x_minutes:     "In {minutes} minutes",
+			later_today_at_x: "Later today at {time}",
+			tomorrow_at_x:    "Tomorrow at {time}",
+
+			day0: "Sunday",
+			day1: "Monday",
+			day2: "Tuesday",
+			day3: "Wednesday",
+			day4: "Thursday",
+			day5: "Friday",
+			day6: "Saturday",
+
+			dayShort0: "Sun",
+			dayShort1: "Mon",
+			dayShort2: "Tue",
+			dayShort3: "Wed",
+			dayShort4: "Thu",
+			dayShort5: "Fri",
+			dayShort6: "Sat",
+
+			month0: "January",
+			month1: "February",
+			month2: "March",
+			month3: "April",
+			month4: "May",
+			month5: "June",
+			month6: "July",
+			month7: "August",
+			month8: "September",
+			month9: "October",
+			month10: "November",
+			month11: "December",
+
+			active_user_changed_reload_page: "The active user has changed. Reload the page for the latest version.",
+			server_did_not_respond_in_time_try_again: "The server did not respond in time. Please try again.",
+			oops_we_ran_into_some_problems: "Oops! We ran into some problems.",
+			oops_we_ran_into_some_problems_more_details_console: "Oops! We ran into some problems. Please try again later. More error details may be in the browser console.",
+			file_too_large_to_upload: "The file is too large to be uploaded.",
+			uploaded_file_is_too_large_for_server_to_process: "The uploaded file is too large for the server to process.",
+			files_being_uploaded_are_you_sure: "Files are still being uploaded. Are you sure you want to submit this form?",
+			attach: "Attach files",
+			rich_text_box: "Rich text box",
+			close: "Close",
+			link_copied_to_clipboard: "Link copied to clipboard.",
+			text_copied_to_clipboard: "Text copied to clipboard.",
+			loading: "Loading…",
+			you_have_exceeded_maximum_number_of_selectable_items: "You have exceeded the maximum number of selectable items.",
+
+			processing: "Processing",
+			'processing...': "Processing…",
+
+			showing_x_of_y_items: "Showing {count} of {total} items",
+			showing_all_items: "Showing all items",
+			no_items_to_display: "No items to display",
+
+			number_button_up: "Increase",
+			number_button_down: "Decrease",
+
+			push_enable_notification_title: "Push notifications enabled successfully at HIVE",
+			push_enable_notification_body: "Thank you for enabling push notifications!",
+
+			pull_down_to_refresh: "Pull down to refresh",
+			release_to_refresh: "Release to refresh",
+			refreshing: "Refreshing…"
+		,
+			"svStandardLib_time.day": "{count} day",
+			"svStandardLib_time.days": "{count} days",
+			"svStandardLib_time.hour": "{count} hour",
+			"svStandardLib_time.hours": "{count} hours",
+			"svStandardLib_time.minute": "{count} minutes",
+			"svStandardLib_time.minutes": "{count} minutes",
+			"svStandardLib_time.month": "{count} month",
+			"svStandardLib_time.months": "{count} months",
+			"svStandardLib_time.second": "{count} second",
+			"svStandardLib_time.seconds": "{count} seconds",
+			"svStandardLib_time.week": "time.week",
+			"svStandardLib_time.weeks": "{count} weeks",
+			"svStandardLib_time.year": "{count} year",
+			"svStandardLib_time.years": "{count} years"
+
+		});
+	</script>
+<form style="display:none" hidden="hidden">
+<input type="text" name="_xfClientLoadTime" value id="_xfClientLoadTime" title="_xfClientLoadTime" tabindex="-1" />
+</form>
+<script type="application/ld+json">
+				{
+    "@context": "https://schema.org",
+    "@type": "DiscussionForumPosting",
+    "@id": "https://www.hiveworkshop.com/threads/ui-save-load-frames.327849/",
+    "headline": "UI: Save&Load Frames",
+    "keywords": "ui change, ui-fdf",
+    "articleBody": "Introduction\nCurrently none of the versions of warcraft 3 that have access to the UI-Frame natives do probably Save&Load the usage of Frames/TOC (this was written when 1.32.8 /1.32.9 PTR were the current Versions).\n\nThis broken Save&Load stops...",
+    "articleSection": "Scripting Tutorials",
+    "author": {
+        "@type": "Person",
+        "@id": "https://www.hiveworkshop.com/members/tasyen.194042/",
+        "name": "Tasyen",
+        "url": "https://www.hiveworkshop.com/members/tasyen.194042/"
+    },
+    "datePublished": "2020-10-11T06:26:13+00:00",
+    "dateModified": "2023-11-09T07:54:58+00:00",
+    "image": "https://www.hiveworkshop.com/data/avatars/l/194/194042.jpg?1484672291",
+    "interactionStatistic": {
+        "@type": "InteractionCounter",
+        "interactionType": "https://schema.org/CommentAction",
+        "userInteractionCount": 5
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "HIVE",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/data/styles/7/styles/vindit-reforged/512.logo.og.png"
+        }
+    }
+}
+			</script>
+</body>
+</html>

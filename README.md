@@ -6,12 +6,21 @@ Best-effort recording high quality references.
 * [Weird ability guide](./sources/darkwulfy-wc3-weird-ability-guide/2023-11-14.md)
 * [Wc3 ability guide](./sources/pitzermike-wc3-ability-guide/2023-11-14.md)
 * [wc3 ability insight document](./sources/screwthetrees-wc3-editor-ability-insight-document/2023-11-14.md)
+* ...and many more
 
 ## TODO
 
-* https://www.hiveworkshop.com/pastebin/b2769ab71109c3634b3115937deaa34a.24187
+* wurststdlib
+* wurststdlib2
+* wurst blogs
+* wurst manual
+* typescript
+* lua
+* vjass
+* cjass
+* zinc
 
 ## Maybe?
 
-* https://www.hiveworkshop.com/tags/ui-fdf/
 * https://github.com/Tasyen/FDF
+* https://github.com/Luashine/jass-history
