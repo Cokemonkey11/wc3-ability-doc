@@ -19,6 +19,7 @@ Best-effort recording high quality references.
 * vjass
 * cjass
 * zinc
+* libraries on hiveworkshop
 
 ## Maybe?
 
