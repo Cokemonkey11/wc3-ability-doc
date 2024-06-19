@@ -20,6 +20,7 @@ Best-effort recording high quality references.
 * cjass
 * zinc
 * libraries on hiveworkshop
+* https://www.hiveworkshop.com/threads/event-response-myths.253665/#post2543973
 
 ## Maybe?
 
